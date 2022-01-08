@@ -10,6 +10,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Test
-        // Test from develop
+        // Test resolve conflicts
     }
 }
