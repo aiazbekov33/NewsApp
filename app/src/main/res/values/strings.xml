@@ -6,4 +6,7 @@
     <string name="home">Home</string>
     <string name="bookmark">Bookmark</string>
     <string name="setting">Setting</string>
+    <string name="top_headlines">Top_headlines</string>
+    <string name="sources">Sources</string>
+    <string name="everything">Everything</string>
 </resources>

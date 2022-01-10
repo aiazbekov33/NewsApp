@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/news_fragment"
-        android:title="@string/home"
+        android:title="@string/everything"
         android:icon="@drawable/ic_home"/>
     <item
         android:id="@+id/discovery_fragment"
-        android:title="@string/discovery"
+        android:title="@string/top_headlines"
         android:icon="@drawable/ic_discovery"/>
     <item
-        android:id="@+id/bookmark_fragment"
-        android:title="@string/bookmark"
+        android:id="@+id/sources_fragment"
+        android:title="@string/sources"
         android:icon="@drawable/ic_bookmark"/>
     <item
         android:id="@+id/setting_fragment"
