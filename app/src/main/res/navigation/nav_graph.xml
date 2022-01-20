@@ -3,26 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/newsFragment">
+    app:startDestination="@id/navigation_new">
 
     <fragment
-        android:id="@+id/newsFragment"
-        android:name="com.geektech.newsapp.presentation.ui.fragments.NewsFragment"
-        android:label="fragment_news"
+        android:id="@+id/navigation_new"
+        android:name="com.geektech.newsapp.presentation.ui.fragments.everything.NewsFragment"
+        android:label="news"
         tools:layout="@layout/fragment_news" />
     <fragment
-        android:id="@+id/settingFragment"
-        android:name="com.geektech.newsapp.presentation.ui.fragments.SettingFragment"
-        android:label="fragment_setting"
+        android:id="@+id/navigation_setting"
+        android:name="com.geektech.newsapp.presentation.ui.fragments.settings.SettingFragment"
+        android:label="settings"
         tools:layout="@layout/fragment_setting" />
     <fragment
-        android:id="@+id/bookmarkFragment"
-        android:name="com.geektech.newsapp.presentation.ui.fragments.BookmarkFragment"
-        android:label="fragment_bookmark"
+        android:id="@+id/navigation_source"
+        android:name="com.geektech.newsapp.presentation.ui.fragments.sources.SourcesFragment"
+        android:label="Source"
         tools:layout="@layout/fragment_sources" />
     <fragment
-        android:id="@+id/disconaryFragment"
-        android:name="com.geektech.newsapp.presentation.ui.fragments.DisconaryFragment"
-        android:label="fragment_disconary"
-        tools:layout="@layout/fragment_topheadlines" />
+        android:id="@+id/navigation_top_headlines"
+        android:name="com.geektech.newsapp.presentation.ui.fragments.topheadlines.TopHeadlinesFragment"
+        android:label="top_headlines"
+        tools:layout="@layout/fragment_top_headlines"/>
+
 </navigation>
