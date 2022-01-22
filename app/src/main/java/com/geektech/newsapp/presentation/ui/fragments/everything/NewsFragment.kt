@@ -1,13 +1,21 @@
 package com.geektech.newsapp.presentation.ui.fragments.everything
 
+import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.View
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
 import com.geektech.newsapp.databinding.FragmentNewsBinding
-import com.geektech.newsapp.domain.models.TopHeadlinesModel
+import com.geektech.newsapp.extensions.scrollListenNextPage
 import com.geektech.newsapp.presentation.base.BaseFragment
+import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import com.geektech.newsapp.presentation.state.UIState
+import com.geektech.newsapp.presentation.ui.adapter.EverythingAdapter
+import com.geektech.newsapp.presentation.ui.adapter.EverythingHotNewsAdapter
 import com.geektech.newsapp.presentation.ui.adapter.TopHeadlinesAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -17,6 +25,71 @@ class NewsFragment :
 
     override val binding by viewBinding(FragmentNewsBinding::bind)
     override val viewModel: NewEverythingViewModel by viewModels()
-    private val topHeadlinesAdapter = TopHeadlinesAdapter()
+    private val everythingAdapter = EverythingAdapter()
+    private val everythingHotNewsAdapter = EverythingHotNewsAdapter()
+
+
+    override fun initialize() = with(binding) {
+        recyclerNews.layoutManager = LinearLayoutManager(context)
+        recyclerNews.adapter = everythingAdapter
+
+        recyclerHotNews.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        recyclerHotNews.adapter = everythingHotNewsAdapter
+    }
+
+    override fun setupListeners() {
+        setupOnScrollListener()
+    }
+
+    private fun setupOnScrollListener() = with(binding) {
+        recyclerNews.scrollListenNextPage(viewModel)
+        recyclerHotNews.scrollListenNextPage(viewModel)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, menuInflater: MenuInflater) {
+        menuInflater.inflate(R.menu.menu_toolbar, menu)
+
+        val search = menu.findItem(R.id.news_search)
+
+        val searchView = search.actionView as SearchView
+        searchView.queryHint = "Search"
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+        })
+    }
+
+    override fun setupObserves() {
+        viewModel.everythingState.subscribe {
+            when (it) {
+                is UIState.Error -> {
+
+                }
+                is UIState.Loading -> {
+                    binding.swipeRefresh.isRefreshing = true
+
+                }
+                is UIState.Success -> {
+                    val list = ArrayList<TopHeadlinesUI>(everythingAdapter.currentList)
+                    it.data.let { data -> list.addAll(data) }
+                    everythingAdapter.submitList(list)
+                    everythingHotNewsAdapter.submitList(list)
+                    binding.swipeRefresh.isRefreshing = false
+                }
+            }
+        }
+
+    }
 
 }

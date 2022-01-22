@@ -1,4 +1,4 @@
-package com.geektech.newsapp.data.dtos.modelsDto
+package com.geektech.newsapp.data.dtos.modelsdto
 
 import com.geektech.newsapp.domain.models.SourcesModel
 import com.geektech.newsapp.presentation.base.IBaseDiffModel
