@@ -26,6 +26,7 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
         setupListeners()
         setupRequests()
         setupObserves()
+        setupDarkNight()
     }
 
     open fun initialize() {
@@ -38,6 +39,9 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
     }
 
     open fun setupObserves() {
+    }
+
+    open fun setupDarkNight() {
     }
 
     protected fun <T> StateFlow<UIState<T>>.subscribe(

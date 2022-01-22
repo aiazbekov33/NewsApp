@@ -1,5 +1,6 @@
 package com.geektech.newsapp.presentation.ui.fragments.settings
 
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
@@ -14,4 +15,13 @@ class SettingFragment :
     override val binding by viewBinding(FragmentSettingBinding::bind)
     override val viewModel: SettingViewModel by viewModels()
 
+    override fun setupDarkNight() = with(binding){
+        DarkModeScSetting.setOnClickListener{
+            if (DarkModeScSetting.isChecked){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }else{
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
+    }
 }
