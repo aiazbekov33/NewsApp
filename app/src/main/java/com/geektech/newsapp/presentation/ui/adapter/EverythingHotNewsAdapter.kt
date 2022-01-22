@@ -1,9 +1,10 @@
 package com.geektech.newsapp.presentation.ui.adapter
 
- import android.graphics.drawable.Drawable
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.NonNull
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -11,33 +12,33 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import com.geektech.newsapp.databinding.ItemNewsBinding
+import com.geektech.newsapp.databinding.ItemHotNewsBinding
 import com.geektech.newsapp.presentation.base.BaseComparator
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 
-class TopHeadlinesAdapter :
-    ListAdapter<TopHeadlinesUI, TopHeadlinesAdapter.TopHeadlinesViewHolder>(
+class EverythingHotNewsAdapter :
+    ListAdapter<TopHeadlinesUI, EverythingHotNewsAdapter.EverythingHotNewsViewHolder>(
         BaseComparator()
     ) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopHeadlinesViewHolder {
-        return TopHeadlinesViewHolder(
-            ItemNewsBinding.inflate(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EverythingHotNewsViewHolder {
+        return EverythingHotNewsViewHolder(
+            ItemHotNewsBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent, false
             )
         )
     }
 
-    override fun onBindViewHolder(holder: TopHeadlinesViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: EverythingHotNewsViewHolder, position: Int) {
         getItem(position)?.let { holder.onBind(it) }
     }
 
-    class TopHeadlinesViewHolder(
-        private val binding: ItemNewsBinding
+    class EverythingHotNewsViewHolder(
+        private val binding: ItemHotNewsBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(it: TopHeadlinesUI) = with(binding) {
-            Glide.with(newsIm)
+            Glide.with(hotNewsIm)
                 .load(it.urlToImage)
                 .listener(object : RequestListener<Drawable?> {
                     override fun onLoadFailed(
@@ -62,11 +63,11 @@ class TopHeadlinesAdapter :
                     }
                 })
                 .transition(DrawableTransitionOptions.withCrossFade())
-                .into(newsIm)
+                .into(hotNewsIm)
 
-            textTitle.text = it.title
-            textDescription.text = it.description
-            newsDate.text = it.publishedAt
+            textForHotNews.text = it.title
+            dateTop.text = it.publishedAt
+
         }
     }
 }

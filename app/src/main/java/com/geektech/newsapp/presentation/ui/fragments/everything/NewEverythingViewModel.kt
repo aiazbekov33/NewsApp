@@ -9,6 +9,7 @@ import com.geektech.newsapp.presentation.state.UIState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import retrofit2.http.Query
 import javax.inject.Inject
 
 @HiltViewModel
@@ -16,8 +17,7 @@ class NewEverythingViewModel @Inject constructor(
     private val fetchEverythingUseCases: FetchEverythingUseCases
 ) : BaseViewModel(), BaseRequest {
 
-    private val _everythingState =
-        MutableStateFlow<UIState<List<TopHeadlinesUI>>>(UIState.Loading())
+    private val _everythingState = MutableStateFlow<UIState<List<TopHeadlinesUI>>>(UIState.Loading())
     val everythingState: StateFlow<UIState<List<TopHeadlinesUI>>> = _everythingState
     override var page: Int = 1
 
@@ -30,6 +30,5 @@ class NewEverythingViewModel @Inject constructor(
             { fetchEverythingUseCases(page) },
             { it.map { data -> data.toUI() } })
     }
-
 
 }

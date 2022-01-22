@@ -3,18 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/activity_main.xml" value="0.24074074074074073" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_news.xml" value="0.26875" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_setting.xml" value="0.26875" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_sources.xml" value="0.26875" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_top_headline.xml" value="0.26875" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_top_headline_detail.xml" value="0.26875" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_top_headlines.xml" value="0.26875" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_topheadlines.xml" value="0.26875" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/item_hot_news.xml" value="0.26875" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/item_news.xml" value="0.25" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/item_sources.xml" value="0.26875" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/menu/bottom_navigation.xml" value="0.26875" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2484375" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_chat.xml" value="0.2484375" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_home.xml" value="0.2484375" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2484375" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_red_eye.xml" value="0.2484375" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_search.xml" value="0.1296875" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_settings.xml" value="0.1296875" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_time.xml" value="0.2484375" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_bookmark.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_disconary.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_news.xml" value="0.12" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_setting.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_sources.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_topheadlines.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/item_hot_news.xml" value="0.536" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/item_news.xml" value="0.2" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/menu/app_bar.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/menu/bottom_navigation.xml" value="0.264" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/menu/menu_toolbar.xml" value="0.4" />
       </map>
     </option>
   </component>
