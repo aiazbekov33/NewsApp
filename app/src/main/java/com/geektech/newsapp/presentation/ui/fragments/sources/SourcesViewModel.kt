@@ -37,6 +37,10 @@ class SourcesViewModel @Inject constructor(
         )
     }
 
+    override fun fetchNewsApp2(page: Int) {
+
+    }
+
     override fun searchNews(q: String) {
         TODO("Not yet implemented")
     }

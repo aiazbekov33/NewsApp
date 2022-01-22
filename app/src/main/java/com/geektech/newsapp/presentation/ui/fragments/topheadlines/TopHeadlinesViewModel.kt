@@ -38,6 +38,10 @@ class TopHeadlinesViewModel @Inject constructor(
             { it.map { data -> data.toUI() } })
     }
 
+    override fun fetchNewsApp2(page: Int) {
+
+    }
+
     override fun searchNews(q: String) {
         _searchNews.subscribeTo({
             searchNewsUseCases(q)

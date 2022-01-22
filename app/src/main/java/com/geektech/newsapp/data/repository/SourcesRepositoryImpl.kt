@@ -15,6 +15,6 @@ class SourcesRepositoryImpl @Inject constructor(
     BaseRepository(), SourcesRepository {
 
     override fun fetchSources(page:Int): Flow<Resource<List<SourcesModel>>> = doRequest {
-        service.fetchSources("us", 1).articles.map { it.toDomain() }
+        service.fetchSources("us", 1).sources.map { it.toDomain() }
     }
 }

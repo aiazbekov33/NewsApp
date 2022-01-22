@@ -10,7 +10,28 @@ class EverythingRepositoryImpl @Inject constructor(
     private val service: EverythingApiService
 ) : BaseRepository(), EverythingRepository {
 
-    override fun fetchEverything(page:Int) = doRequest {
-            service.fetchEverything("bitcoin", page).articles.map { it.toDomain() }
+    override fun fetchEverything(page: Int) = doRequest {
+        service.fetchEverything(
+            "bitcoin",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null, page
+        ).articles.map { it.toDomain() }
     }
+    override fun fetchEverything2(page: Int) = doRequest {
+        service.fetchEverything2(
+            "apple",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null, page
+        ).articles.map { it.toDomain() }
+    }
+
+
 }
