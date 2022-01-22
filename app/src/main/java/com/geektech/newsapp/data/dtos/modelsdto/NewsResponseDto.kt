@@ -1,4 +1,4 @@
-package com.geektech.newsapp.data.dtos.modelsDto
+package com.geektech.newsapp.data.dtos.modelsdto
 
 import com.google.gson.annotations.SerializedName
 

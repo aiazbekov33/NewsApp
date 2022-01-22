@@ -1,5 +1,6 @@
 package com.geektech.newsapp.presentation.ui.fragments.topheadlines
 
+import androidx.lifecycle.viewModelScope
 import com.geektech.newsapp.domain.usecases.FetchTopHeadlinesUseCases
 import com.geektech.newsapp.domain.usecases.SearchNewsUseCases
 import com.geektech.newsapp.presentation.base.BaseRequest
@@ -10,6 +11,7 @@ import com.geektech.newsapp.presentation.state.UIState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
