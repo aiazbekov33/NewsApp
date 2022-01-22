@@ -28,4 +28,5 @@ abstract class RepositoryModule {
     @Binds
     abstract fun provideSourcesRepository(sourcesRepositoryImpl: SourcesRepositoryImpl
     ): SourcesRepository
+
 }

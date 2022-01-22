@@ -20,6 +20,9 @@ class NewEverythingViewModel @Inject constructor(
     private val _everythingState = MutableStateFlow<UIState<List<TopHeadlinesUI>>>(UIState.Loading())
     val everythingState: StateFlow<UIState<List<TopHeadlinesUI>>> = _everythingState
     override var page: Int = 1
+    override var q: String
+        get() = TODO("Not yet implemented")
+        set(value) {}
 
     init {
         fetchNewsApp(1)
@@ -29,6 +32,10 @@ class NewEverythingViewModel @Inject constructor(
         _everythingState.subscribeTo(
             { fetchEverythingUseCases(page) },
             { it.map { data -> data.toUI() } })
+    }
+
+    override fun searchNews(q: String) {
+        TODO("Not yet implemented")
     }
 
 }

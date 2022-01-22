@@ -15,7 +15,7 @@ import com.geektech.newsapp.databinding.ItemNewsBinding
 import com.geektech.newsapp.presentation.base.BaseComparator
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 
-class TopHeadlinesAdapter :
+class TopHeadlinesAdapter(private val itemClick:(model: TopHeadlinesUI)-> Unit) :
     ListAdapter<TopHeadlinesUI, TopHeadlinesAdapter.TopHeadlinesViewHolder>(
         BaseComparator()
     ) {
@@ -33,9 +33,18 @@ class TopHeadlinesAdapter :
         getItem(position)?.let { holder.onBind(it) }
     }
 
-    class TopHeadlinesViewHolder(
+
+   inner class TopHeadlinesViewHolder(
         private val binding: ItemNewsBinding
     ) : RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener {
+                getItem(absoluteAdapterPosition)?.let{
+                        itemClick(it)
+                }
+            }
+        }
         fun onBind(it: TopHeadlinesUI) = with(binding) {
             Glide.with(newsIm)
                 .load(it.urlToImage)

@@ -1,6 +1,9 @@
 package com.geektech.newsapp.presentation.ui.fragments.topheadlines
 
+import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
@@ -18,7 +21,14 @@ class TopHeadlinesFragment :
 
     override val binding by viewBinding(FragmentTopHeadlinesBinding::bind)
     override val viewModel: TopHeadlinesViewModel by viewModels()
-    private val topHeadlinesAdapter = TopHeadlinesAdapter()
+    private val topHeadlinesAdapter = TopHeadlinesAdapter(this::itemClick)
+
+    private fun itemClick(model: TopHeadlinesUI) {
+        val bundle = Bundle()
+        bundle.putSerializable("model",model)
+        findNavController().navigate(R.id.detail,bundle)
+
+    }
 
     override fun initialize() = with(binding) {
         recyclerNews.layoutManager = LinearLayoutManager(context)

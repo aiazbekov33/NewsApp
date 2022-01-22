@@ -1,7 +1,9 @@
 package com.geektech.newsapp.presentation.models
 
+
 import com.geektech.newsapp.domain.models.TopHeadlinesModel
 import com.geektech.newsapp.presentation.base.IBaseDiffModel
+import java.io.Serializable
 
 data class TopHeadlinesUI(
     val source: SourceUI,
@@ -12,7 +14,7 @@ data class TopHeadlinesUI(
     val urlToImage: String?,
     val publishedAt: String?,
     val content: String?
-) : IBaseDiffModel
+) : IBaseDiffModel,Serializable
 
 fun TopHeadlinesModel.toUI() = TopHeadlinesUI(
     source.toUi(),

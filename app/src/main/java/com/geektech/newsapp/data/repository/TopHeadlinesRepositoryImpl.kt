@@ -16,4 +16,8 @@ class TopHeadlinesRepositoryImpl @Inject constructor(
     override fun fetchTopHeadlines(page:Int):Flow<Resource<List<TopHeadlinesModel>>> = doRequest {
         service.fetchTopHeadlines("us", page).articles.map { it.toDomain() }
     }
+
+    override fun searchNews(q: String): Flow<Resource<List<TopHeadlinesModel>>> = doRequest {
+        service.searchTopHeadlines(q).articles.map { it.toDomain() }
+    }
 }

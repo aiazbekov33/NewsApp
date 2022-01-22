@@ -12,4 +12,9 @@ interface TopHeadlinesApiService {
         @Query("country") query: String,
         @Query("page") page: Int
     ): NewsResponseDto<TopHeadlinesDto>
+
+    @GET("/v2/top-headlines?apiKey=0ef15f73c03b4ca0a19a25cbdf3c43d2")
+    suspend fun searchTopHeadlines(
+       @Query("q") q: String
+    ): NewsResponseDto<TopHeadlinesDto>
 }

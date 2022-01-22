@@ -3,6 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/activity_main.xml" value="0.24074074074074073" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_news.xml" value="0.26875" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_setting.xml" value="0.26875" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_sources.xml" value="0.26875" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_top_headline.xml" value="0.26875" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_top_headline_detail.xml" value="0.26875" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_top_headlines.xml" value="0.26875" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_topheadlines.xml" value="0.26875" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/item_hot_news.xml" value="0.26875" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/item_news.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/item_sources.xml" value="0.26875" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/menu/bottom_navigation.xml" value="0.26875" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp1/app/src/main/res/layout/fragment_detail.xml" value="0.20955574182732606" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp1/app/src/main/res/layout/fragment_news.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp1/app/src/main/res/layout/fragment_search.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp1/app/src/main/res/layout/fragment_setting.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp1/app/src/main/res/layout/fragment_sources.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp1/app/src/main/res/layout/fragment_top_headlines.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp1/app/src/main/res/layout/item_news.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NewsApp1/app/src/main/res/layout/search_items.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2484375" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_chat.xml" value="0.2484375" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_home.xml" value="0.2484375" />

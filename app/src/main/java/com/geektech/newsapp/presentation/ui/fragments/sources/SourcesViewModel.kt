@@ -22,6 +22,9 @@ class SourcesViewModel @Inject constructor(
     private val _sourcesState = MutableStateFlow<UIState<List<SourcesUI>>>(UIState.Loading())
     val sourcesState: StateFlow<UIState<List<SourcesUI>>> = _sourcesState
     override var page: Int = 1
+    override var q: String
+        get() = TODO("Not yet implemented")
+        set(value) {}
 
     init {
         fetchNewsApp(1)
@@ -34,4 +37,8 @@ class SourcesViewModel @Inject constructor(
         )
     }
 
+    override fun searchNews(q: String) {
+        TODO("Not yet implemented")
     }
+
+}
