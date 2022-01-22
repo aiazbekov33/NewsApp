@@ -25,10 +25,20 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ProgressBar
+            android:id="@+id/progress_photo"
+            style="@android:style/Widget.ProgressBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="70dp"
+            app:layout_constraintStart_toStartOf="@id/news_im"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@color/gray"
+            android:background="@color/white"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/news_im"
@@ -36,7 +46,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/text_name_travel"
+                android:id="@+id/text_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -50,14 +60,14 @@
                 tools:text="Travel" />
 
             <TextView
-                android:id="@+id/text_story"
+                android:id="@+id/text_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:textSize="12sp"
                 android:padding="4dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_name_travel"
+                app:layout_constraintTop_toBottomOf="@id/text_title"
                 tools:text="Дон ли, Волга ли течёт котомку на плечо,
 Боль в груди там тайничок, открытый фомкой, не ключом.
 Сколько миль ещё, перелет короткий был не в счёт,
