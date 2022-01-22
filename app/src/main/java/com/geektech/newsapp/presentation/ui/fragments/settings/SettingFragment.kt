@@ -2,6 +2,7 @@ package com.geektech.newsapp.presentation.ui.fragments.settings
 
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
 import com.geektech.newsapp.databinding.FragmentSettingBinding
@@ -24,4 +25,11 @@ class SettingFragment :
             }
         }
     }
+
+    override fun setupListeners() {
+        binding.searchButton.setOnClickListener{
+            findNavController().navigate(R.id.searchFragment)
+        }
+    }
+
 }

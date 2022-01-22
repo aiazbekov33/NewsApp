@@ -29,25 +29,25 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
-        val appBarConfiguration = AppBarConfiguration.Builder(
-            R.id.navigation_top_headlines,
-            R.id.navigation_new,
-            R.id.navigation_setting,
-            R.id.navigation_source
-        ).build()
+//        val appBarConfiguration = AppBarConfiguration.Builder(
+//            R.id.navigation_top_headlines,
+//            R.id.navigation_new,
+//            R.id.navigation_setting,
+//            R.id.navigation_source
+//        ).build()
         setupWithNavController(binding.bottomNav, navController)
-        setupActionBarWithNavController(this, navController, appBarConfiguration)
+//        setupActionBarWithNavController(this, navController, appBarConfiguration)
     }
 
-    private fun setupActionBarWithNavController(
-        activity: MainActivity,
-        navController: NavController,
-        appBarConfiguration: AppBarConfiguration
-    ) {
+//    private fun setupActionBarWithNavController(
+//        activity: MainActivity,
+//        navController: NavController,
+//        appBarConfiguration: AppBarConfiguration
+//    ) {
+//
+//    }
 
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        return super.onSupportNavigateUp() || super.onSupportNavigateUp()
-    }
+//    override fun onSupportNavigateUp(): Boolean {
+//        return super.onSupportNavigateUp() || super.onSupportNavigateUp()
+//    }
 }

@@ -51,40 +51,49 @@ class NewsFragment :
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, menuInflater: MenuInflater) {
-        menuInflater.inflate(R.menu.menu_toolbar, menu)
-
-        val search = menu.findItem(R.id.news_search)
-
-        val searchView = search.actionView as SearchView
-        searchView.queryHint = "Search"
-
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return false
-            }
-        })
-    }
+//    override fun onCreateOptionsMenu(menu: Menu, menuInflater: MenuInflater) {
+//        menuInflater.inflate(R.menu.menu_toolbar, menu)
+//
+//        val search = menu.findItem(R.id.news_search)
+//
+//        val searchView = search.actionView as SearchView
+//        searchView.queryHint = "Search"
+//
+//        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(query: String?): Boolean {
+//                return false
+//            }
+//
+//            override fun onQueryTextChange(newText: String?): Boolean {
+//                return false
+//            }
+//        })
+//    }
 
     override fun setupObserves() {
+        viewModel.everythingState2.subscribe{
+            when(it){
+                is UIState.Error -> {}
+                is UIState.Loading -> {}
+                is UIState.Success -> {
+                    everythingHotNewsAdapter.submitList(it.data)
+                }
+            }
+        }
+
         viewModel.everythingState.subscribe {
             when (it) {
                 is UIState.Error -> {
 
                 }
                 is UIState.Loading -> {
-                    binding.swipeRefresh.isRefreshing = true
+//                    binding.swipeRefresh.isRefreshing = true
 
                 }
                 is UIState.Success -> {
                     val list = ArrayList<TopHeadlinesUI>(everythingAdapter.currentList)
                     it.data.let { data -> list.addAll(data) }
                     everythingAdapter.submitList(list)
-                    everythingHotNewsAdapter.submitList(list)
                     binding.swipeRefresh.isRefreshing = false
                 }
             }

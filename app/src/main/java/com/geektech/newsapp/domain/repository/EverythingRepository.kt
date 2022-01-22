@@ -6,4 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface EverythingRepository {
     fun fetchEverything(page:Int): Flow<Resource<List<TopHeadlinesModel>>>
+
+    fun fetchEverything2(page:Int): Flow<Resource<List<TopHeadlinesModel>>>
+
 }

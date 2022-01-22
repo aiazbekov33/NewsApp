@@ -1,5 +1,6 @@
 package com.geektech.newsapp.presentation.ui.fragments.everything
 
+import com.geektech.newsapp.domain.usecases.FetchEveryThingUseCases2
 import com.geektech.newsapp.domain.usecases.FetchEverythingUseCases
 import com.geektech.newsapp.presentation.base.BaseRequest
 import com.geektech.newsapp.presentation.base.BaseViewModel
@@ -14,11 +15,15 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NewEverythingViewModel @Inject constructor(
-    private val fetchEverythingUseCases: FetchEverythingUseCases
+    private val fetchEverythingUseCases: FetchEverythingUseCases,
+    private val fetchEverythingUseCases2: FetchEveryThingUseCases2
 ) : BaseViewModel(), BaseRequest {
 
     private val _everythingState = MutableStateFlow<UIState<List<TopHeadlinesUI>>>(UIState.Loading())
     val everythingState: StateFlow<UIState<List<TopHeadlinesUI>>> = _everythingState
+
+    private val _everythingState2 = MutableStateFlow<UIState<List<TopHeadlinesUI>>>(UIState.Loading())
+    val everythingState2: StateFlow<UIState<List<TopHeadlinesUI>>> = _everythingState
     override var page: Int = 1
     override var q: String
         get() = TODO("Not yet implemented")
@@ -32,6 +37,13 @@ class NewEverythingViewModel @Inject constructor(
         _everythingState.subscribeTo(
             { fetchEverythingUseCases(page) },
             { it.map { data -> data.toUI() } })
+    }
+
+    override fun fetchNewsApp2(page: Int) {
+        _everythingState2.subscribeTo(
+            {fetchEverythingUseCases2(page)},{it.map { data-> data.toUI() }}
+        )
+
     }
 
     override fun searchNews(q: String) {
