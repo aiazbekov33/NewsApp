@@ -2,7 +2,7 @@ package com.geektech.newsapp.data.repository
 
 import com.geektech.newsapp.data.repository.base.BaseRepository
 import com.geektech.newsapp.common.Resource
-import com.geektech.newsapp.data.dtos.modelsDto.toDomain
+import com.geektech.newsapp.data.dtos.modelsdto.toDomain
 import com.geektech.newsapp.data.network.apiservice.SourceApiService
 import com.geektech.newsapp.domain.models.SourcesModel
 import com.geektech.newsapp.domain.repository.SourcesRepository

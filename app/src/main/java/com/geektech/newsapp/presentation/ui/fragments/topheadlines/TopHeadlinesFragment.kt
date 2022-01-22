@@ -39,25 +39,26 @@ class TopHeadlinesFragment :
         setupOnScrollListener()
     }
 
-    private fun setupOnScrollListener()= with(binding) {
+    private fun setupOnScrollListener() = with(binding) {
         recyclerNews.scrollListenNextPage(viewModel)
-
     }
 
     override fun setupObserves() {
-        viewModel.topHeadlinesState.subscribe{
-            when(it){
-                is UIState.Error ->{
+        viewModel.topHeadlinesState.subscribe {
+            when (it) {
+                is UIState.Error -> {
 
                 }
                 is UIState.Loading -> {
-                    binding.swipeRefresh.isRefreshing = true
+                    binding.topSwipeRefresh.isRefreshing = true
 
                 }
                 is UIState.Success -> {
                     val list = ArrayList<TopHeadlinesUI>(topHeadlinesAdapter.currentList)
-                    it.data.let { data ->  list.addAll(data) }
-                    topHeadlinesAdapter.submitList(list)                }
+                    it.data.let { data -> list.addAll(data) }
+                    topHeadlinesAdapter.submitList(list)
+                    binding.topSwipeRefresh.isRefreshing = false
+                }
             }
         }
 
