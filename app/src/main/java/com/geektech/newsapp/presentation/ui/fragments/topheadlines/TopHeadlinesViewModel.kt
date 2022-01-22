@@ -1,6 +1,7 @@
 package com.geektech.newsapp.presentation.ui.fragments.topheadlines
 
 import com.geektech.newsapp.domain.usecases.FetchTopHeadlinesUseCases
+import com.geektech.newsapp.domain.usecases.SearchNewsUseCases
 import com.geektech.newsapp.presentation.base.BaseRequest
 import com.geektech.newsapp.presentation.base.BaseViewModel
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
@@ -13,13 +14,18 @@ import javax.inject.Inject
 
 @HiltViewModel
 class TopHeadlinesViewModel @Inject constructor(
-    private val fetchTopHeadlinesUseCases: FetchTopHeadlinesUseCases
+    private val fetchTopHeadlinesUseCases: FetchTopHeadlinesUseCases,
+    private val searchNewsUseCases: SearchNewsUseCases
 ) : BaseViewModel(),BaseRequest {
 
     private val _topHeadlinesState =
         MutableStateFlow<UIState<List<TopHeadlinesUI>>>(UIState.Loading())
     val topHeadlinesState: StateFlow<UIState<List<TopHeadlinesUI>>> = _topHeadlinesState
+
+    private val _searchNews = MutableStateFlow<UIState<List<TopHeadlinesUI>>>(UIState.Loading())
+    val searchNews: StateFlow<UIState<List<TopHeadlinesUI>>> = _searchNews
     override var page: Int = 1
+    override var q: String = ""
 
     init {
         fetchNewsApp(1)
@@ -29,6 +35,13 @@ class TopHeadlinesViewModel @Inject constructor(
             { fetchTopHeadlinesUseCases(page) },
             { it.map { data -> data.toUI() } })
     }
+
+    override fun searchNews(q: String) {
+        _searchNews.subscribeTo({
+            searchNewsUseCases(q)
+        },{it.map { data-> data.toUI() }})
+    }
+
 }
 
 

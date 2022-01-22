@@ -17,6 +17,6 @@ class NewsFragment :
 
     override val binding by viewBinding(FragmentNewsBinding::bind)
     override val viewModel: NewEverythingViewModel by viewModels()
-    private val topHeadlinesAdapter = TopHeadlinesAdapter()
+
 
 }

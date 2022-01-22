@@ -18,4 +18,8 @@ class TopHeadlinesRepositoryImpl @Inject constructor(
 
     }
 
+    override fun searchNews(q: String): Flow<Resource<List<TopHeadlinesModel>>> = doRequest {
+        service.searchTopHeadlines(q).articles.map { it.toDomain() }
+    }
+
 }
