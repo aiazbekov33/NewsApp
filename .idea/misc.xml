@@ -3,6 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/drawable-night/thumb.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/drawable-night/track.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/drawable-v24/ic_access_time.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/drawable-v24/ic_arrow_forward.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/drawable-v24/ic_block.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/drawable-v24/ic_dark_mode.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/drawable-v24/ic_help.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/drawable-v24/ic_language.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/drawable-v24/ic_location.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/drawable-v24/ic_notifications.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/drawable-v24/thumb.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/drawable-v24/track.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/layout/fragment_news.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/layout/fragment_setting.xml" value="0.20925925925925926" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/menu/bottom_navigation.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/activity_main.xml" value="0.24074074074074073" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_news.xml" value="0.26875" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_setting.xml" value="0.26875" />
