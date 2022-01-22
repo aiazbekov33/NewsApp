@@ -39,6 +39,7 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
 
     open fun setupObserves() {
     }
+    open fun swipeRefresh(){}
 
     protected fun <T> StateFlow<UIState<T>>.subscribe(
         state: Lifecycle.State = Lifecycle.State.STARTED,

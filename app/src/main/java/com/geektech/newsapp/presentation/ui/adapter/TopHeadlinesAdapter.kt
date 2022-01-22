@@ -1,6 +1,6 @@
 package com.geektech.newsapp.presentation.ui.adapter
 
-import android.graphics.drawable.Drawable
+ import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,9 +11,8 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import com.geektech.newsapp.presentation.base.BaseComparator
 import com.geektech.newsapp.databinding.ItemNewsBinding
-import com.geektech.newsapp.domain.models.TopHeadlinesModel
+import com.geektech.newsapp.presentation.base.BaseComparator
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 
 class TopHeadlinesAdapter :
@@ -67,6 +66,7 @@ class TopHeadlinesAdapter :
 
             textTitle.text = it.title
             textDescription.text = it.description
+            newsDate.text = it.publishedAt
         }
     }
 }

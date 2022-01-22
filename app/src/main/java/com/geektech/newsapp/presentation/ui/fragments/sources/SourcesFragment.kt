@@ -20,9 +20,11 @@ class SourcesFragment :
     override val viewModel: SourcesViewModel by viewModels()
     private val sourcesAdapter = SourcesAdapter()
 
-    override fun initialize() = with(binding) {
-        recyclerSources.layoutManager = LinearLayoutManager(context)
-        recyclerSources.adapter = sourcesAdapter
+    override fun initialize() {
+       binding.recyclerSources.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = sourcesAdapter
+        }
     }
 
     override fun setupListeners() {
@@ -47,10 +49,9 @@ class SourcesFragment :
                     val list = ArrayList<SourcesUI>(sourcesAdapter.currentList)
                     it.data.let { data -> list.addAll(data) }
                     sourcesAdapter.submitList(list)
+                    binding.swipeRefresh.isRefreshing = false
                 }
             }
         }
-
     }
-
 }
