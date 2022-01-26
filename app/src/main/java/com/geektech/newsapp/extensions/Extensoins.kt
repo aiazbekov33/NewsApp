@@ -1,7 +1,7 @@
 package com.geektech.newsapp.extensions
 
 import androidx.recyclerview.widget.RecyclerView
-import com.geektech.newsapp.presentation.base.BaseRequest
+import com.geektech.newsapp.base.BaseRequest
 
 fun RecyclerView.scrollListenNextPage(viewModel: BaseRequest) {
     this.addOnScrollListener(object : RecyclerView.OnScrollListener() {

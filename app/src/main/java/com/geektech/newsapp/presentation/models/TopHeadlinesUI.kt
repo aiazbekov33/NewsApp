@@ -1,8 +1,8 @@
 package com.geektech.newsapp.presentation.models
 
 
-import com.geektech.newsapp.domain.models.TopHeadlinesModel
-import com.geektech.newsapp.presentation.base.IBaseDiffModel
+import com.geektech.domain.models.TopHeadlinesModel
+import com.geektech.newsapp.base.IBaseDiffModel
 import java.io.Serializable
 
 data class TopHeadlinesUI(

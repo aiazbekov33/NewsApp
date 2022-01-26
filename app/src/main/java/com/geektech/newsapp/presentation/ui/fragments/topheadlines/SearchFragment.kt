@@ -3,24 +3,20 @@ package com.geektech.newsapp.presentation.ui.fragments.topheadlines
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
 import com.geektech.newsapp.databinding.FragmentSearchBinding
-import com.geektech.newsapp.presentation.base.BaseFragment
+import com.geektech.newsapp.base.BaseFragment
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import com.geektech.newsapp.presentation.state.UIState
-import com.geektech.newsapp.presentation.ui.adapter.SearchAdapter
+import com.geektech.newsapp.presentation.ui.adapters.search.SearchAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SearchFragment : BaseFragment<FragmentSearchBinding,TopHeadlinesViewModel>(R.layout.fragment_search) {
+class SearchFragment : BaseFragment<FragmentSearchBinding, TopHeadlinesViewModel>(R.layout.fragment_search) {
 
     override val binding: FragmentSearchBinding by viewBinding(FragmentSearchBinding::bind)
     override val viewModel: TopHeadlinesViewModel by viewModels()

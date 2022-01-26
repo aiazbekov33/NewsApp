@@ -6,10 +6,10 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
 import com.geektech.newsapp.databinding.FragmentSourcesBinding
 import com.geektech.newsapp.extensions.scrollListenNextPage
-import com.geektech.newsapp.presentation.base.BaseFragment
+import com.geektech.newsapp.base.BaseFragment
 import com.geektech.newsapp.presentation.models.SourcesUI
 import com.geektech.newsapp.presentation.state.UIState
-import com.geektech.newsapp.presentation.ui.adapter.SourcesAdapter
+import com.geektech.newsapp.presentation.ui.adapters.sources.SourcesAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

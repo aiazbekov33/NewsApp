@@ -1,7 +1,7 @@
 package com.geektech.newsapp.presentation.models
 
-import com.geektech.newsapp.presentation.base.IBaseDiffModel
-import com.geektech.newsapp.domain.models.SourcesModel
+import com.geektech.newsapp.base.IBaseDiffModel
+import com.geektech.domain.models.SourcesModel
 
 data class SourcesUI(
 
@@ -14,7 +14,7 @@ data class SourcesUI(
     val country: String?
 ) : IBaseDiffModel
 
-fun SourcesModel.toUI() = SourcesUI(
+fun SourcesModel.toUi() = SourcesUI(
     id,
     name,
     description,
