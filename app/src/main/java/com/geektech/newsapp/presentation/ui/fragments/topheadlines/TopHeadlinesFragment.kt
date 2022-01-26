@@ -1,7 +1,6 @@
 package com.geektech.newsapp.presentation.ui.fragments.topheadlines
 
 import android.os.Bundle
-import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,10 +8,10 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
 import com.geektech.newsapp.databinding.FragmentTopHeadlinesBinding
 import com.geektech.newsapp.extensions.scrollListenNextPage
-import com.geektech.newsapp.presentation.base.BaseFragment
+import com.geektech.newsapp.base.BaseFragment
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import com.geektech.newsapp.presentation.state.UIState
-import com.geektech.newsapp.presentation.ui.adapter.TopHeadlinesAdapter
+import com.geektech.newsapp.presentation.ui.adapters.topheadlines.TopHeadlinesAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

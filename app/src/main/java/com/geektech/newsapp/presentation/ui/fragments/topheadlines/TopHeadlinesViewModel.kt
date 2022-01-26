@@ -1,24 +1,22 @@
 package com.geektech.newsapp.presentation.ui.fragments.topheadlines
 
-import androidx.lifecycle.viewModelScope
-import com.geektech.newsapp.domain.usecases.FetchTopHeadlinesUseCases
-import com.geektech.newsapp.domain.usecases.SearchNewsUseCases
-import com.geektech.newsapp.presentation.base.BaseRequest
-import com.geektech.newsapp.presentation.base.BaseViewModel
+import com.geektech.domain.usecases.FetchTopHeadlinesUseCases
+import com.geektech.domain.usecases.SearchNewsUseCases
+import com.geektech.newsapp.base.BaseRequest
+import com.geektech.newsapp.base.BaseViewModel
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import com.geektech.newsapp.presentation.models.toUI
 import com.geektech.newsapp.presentation.state.UIState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class TopHeadlinesViewModel @Inject constructor(
     private val fetchTopHeadlinesUseCases: FetchTopHeadlinesUseCases,
     private val searchNewsUseCases: SearchNewsUseCases
-) : BaseViewModel(),BaseRequest {
+) : BaseViewModel(), BaseRequest {
 
     private val _topHeadlinesState =
         MutableStateFlow<UIState<List<TopHeadlinesUI>>>(UIState.Loading())

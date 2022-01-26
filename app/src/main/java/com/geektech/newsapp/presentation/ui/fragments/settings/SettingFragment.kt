@@ -6,7 +6,7 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
 import com.geektech.newsapp.databinding.FragmentSettingBinding
-import com.geektech.newsapp.presentation.base.BaseFragment
+import com.geektech.newsapp.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
