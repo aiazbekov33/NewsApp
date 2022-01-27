@@ -49,14 +49,12 @@ class TopHeadlinesFragment :
 
                 }
                 is UIState.Loading -> {
-                    binding.topSwipeRefresh.isRefreshing = true
 
                 }
                 is UIState.Success -> {
                     val list = ArrayList<TopHeadlinesUI>(topHeadlinesAdapter.currentList)
                     it.data.let { data -> list.addAll(data) }
                     topHeadlinesAdapter.submitList(list)
-                    binding.topSwipeRefresh.isRefreshing = false
                 }
             }
         }
