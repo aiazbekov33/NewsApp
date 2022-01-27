@@ -9,7 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#ACA9A9</color>
     <color name="red">#F60C0C</color>
-
     <color name="setting_fragmentColor">#FFFFFF</color>
     <color name="setting_imageColor">#FFFFFF</color>
     <color name="setting_textColor1">#535353</color>
@@ -18,4 +17,7 @@
     <color name="setting_buttonColor">#130167</color>
     <color name="setting_imageColor2">#737373</color>
     <color name="setting_imageButtonColor">#737373</color>
+    <color name="bg_gradient_start">#b21331</color>
+    <color name="bg_gradient_end">#820d2a</color>
+    <color name="bg_button_login">#380813</color>
 </resources>
