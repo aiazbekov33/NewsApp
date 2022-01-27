@@ -16,8 +16,17 @@
         <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/drawable-v24/thumb.xml" value="0.13796296296296295" />
         <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/drawable-v24/track.xml" value="0.13796296296296295" />
         <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/layout/fragment_all_news.xml" value="0.14629629629629629" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/layout/fragment_business.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/layout/fragment_magazin.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/layout/fragment_news.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/layout/fragment_setting.xml" value="0.20925925925925926" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/layout/fragment_sources.xml" value="0.14629629629629629" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/layout/fragment_top_headlines.xml" value="0.14629629629629629" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/layout/fragment_world.xml" value="0.14074074074074075" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/layout/item_hot_news.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/layout/item_news.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/layout/item_sources.xml" value="0.14629629629629629" />
         <entry key="..\:/Users/99677/AndroidStudioProjects/NewsApp11/app/src/main/res/menu/bottom_navigation.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/activity_main.xml" value="0.24074074074074073" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_news.xml" value="0.26875" />

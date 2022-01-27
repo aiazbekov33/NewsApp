@@ -2,6 +2,7 @@ package com.geektech.newsapp.presentation.base
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toolbar
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -56,5 +57,4 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
             }
         }
     }
-
 }
