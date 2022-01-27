@@ -10,7 +10,6 @@ import com.geektech.newsapp.R
 import com.geektech.newsapp.base.BaseFragment
 import com.geektech.newsapp.databinding.FragmentSettingBinding
 import com.geektech.newsapp.extensions.LocalHelper
-import com.geektech.newsapp.databinding.FragmentSettingBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -22,9 +21,6 @@ class SettingFragment() :
     var currentPosition = 0
 
     override fun setupDarkNight() = with(binding) {
-        DarkModeScSetting.setOnClickListener {
-            if (DarkModeScSetting.isChecked) {
-    override fun setupDarkNight() = with(binding) {
         switchCompat.setOnClickListener {
             if (switchCompat.isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
@@ -35,14 +31,13 @@ class SettingFragment() :
     }
 
     override fun setupListeners() {
-        binding.searchButton.setOnClickListener {
         binding.search.setOnClickListener {
             findNavController().navigate(R.id.searchFragment)
         }
     }
 
     override fun setupLanguage() {
-        binding.LanguageIbSetting.setOnClickListener {
+        binding.language.setOnClickListener {
             openLanguageDialog()
         }
     }
@@ -76,37 +71,35 @@ class SettingFragment() :
     private fun showEnglishText() {
         val context = LocalHelper().setLocale(requireContext(), "en")
         val resource = context.resources
-        binding.LanguageTvSetting.text = resource.getString(R.string.language)
+        binding.languageTv.text = resource.getString(R.string.language)
         (activity as AppCompatActivity).supportActionBar?.title =
             resource.getString(R.string.app_name)
         binding.EditBtnSetting.text = resource.getString(R.string.edit)
         binding.PreferencesTv.text = resource.getString(R.string.preferences)
-        binding.DarkModeTvSetting.text = resource.getString(R.string.darkmode)
-        binding.NotificationTvSetting.text = resource.getString(R.string.notification)
+        binding.switchCompat.text = resource.getString(R.string.dark_mode)
+        binding.switchCompatNotification.text = resource.getString(R.string.notification)
         binding.SummaryTv.text = resource.getString(R.string.summary)
-        binding.LocationTvSetting.text = resource.getString(R.string.news_by_location)
-        binding.TimeTvSetting.text = resource.getString(R.string.time_to_read)
-        binding.BlockTvSetting.text = resource.getString(R.string.block_content_and_sources)
-        binding.HelpTvSetting.text = resource.getString(R.string.help)
-        binding.searchTvSetting.text = resource.getString(R.string.search)
+        binding.switchCompatLocation.text = resource.getString(R.string.news_by_location)
+//        binding.BlockTvSetting.text = resource.getString(R.string.block_content_and_sources)
+        binding.helpTv.text = resource.getString(R.string.help)
+        binding.searchTv.text = resource.getString(R.string.search)
     }
 
     private fun showRussianText() {
         val context = LocalHelper().setLocale(requireContext(), "ru")
         val resource = context.resources
-        binding.LanguageTvSetting.text = resource.getString(R.string.language)
+        binding.languageTv.text = resource.getString(R.string.language)
         (activity as AppCompatActivity).supportActionBar?.title =
             resource.getString(R.string.app_name)
         binding.EditBtnSetting.text = resource.getString(R.string.edit)
         binding.PreferencesTv.text = resource.getString(R.string.preferences)
-        binding.DarkModeTvSetting.text = resource.getString(R.string.darkmode)
-        binding.NotificationTvSetting.text = resource.getString(R.string.notification)
+        binding.switchCompat.text = resource.getString(R.string.dark_mode)
+        binding.switchCompatNotification.text = resource.getString(R.string.notification)
         binding.SummaryTv.text = resource.getString(R.string.summary)
-        binding.LocationTvSetting.text = resource.getString(R.string.news_by_location)
-        binding.TimeTvSetting.text = resource.getString(R.string.time_to_read)
-        binding.BlockTvSetting.text = resource.getString(R.string.block_content_and_sources)
-        binding.HelpTvSetting.text = resource.getString(R.string.help)
-        binding.searchTvSetting.text = resource.getString(R.string.search)
+        binding.switchCompatLocation.text = resource.getString(R.string.news_by_location)
+//        binding.BlockTvSetting.text = resource.getString(R.string.block_content_and_sources)
+        binding.helpTv.text = resource.getString(R.string.help)
+        binding.searchTv.text = resource.getString(R.string.search)
     }
 
 }

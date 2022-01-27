@@ -16,7 +16,7 @@
     <string name="geektech_gmail_com">geektech@gmail.com</string>
     <string name="preferences">Настройки</string>
     <string name="edit">Редактировать</string>
-    <string name="darkmode">Темный режим</string>
+    <string name="dark_mode">Темный режим</string>
     <string name="notification">Уведомление</string>
     <string name="summary">Резюме</string>
     <string name="news_by_location">Новости по местонахождению</string>
@@ -24,5 +24,7 @@
     <string name="block_content_and_sources">Блокировать контент и источники</string>
     <string name="help">Помощь</string>
     <string name="search">Поиск</string>
+    <string name="location">местонахождение</string>
+    <string name="recent_news">свежие новости</string>
 
 </resources>

@@ -73,7 +73,6 @@ class NewsFragment :
                         val list = ArrayList<TopHeadlinesUI>(everythingAdapter.currentList)
                         it.data.let { data -> list.addAll(data) }
                         everythingAdapter.submitList(list)
-                        binding.swipeRefresh.isRefreshing = false
                     }
                 }
             }
