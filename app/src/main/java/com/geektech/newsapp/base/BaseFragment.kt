@@ -1,6 +1,7 @@
 package com.geektech.newsapp.base
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
@@ -27,6 +28,10 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
         setupRequests()
         setupObserves()
         setupDarkNight()
+        mySearchView()
+    }
+
+    open fun mySearchView() {
     }
 
     open fun initialize() {
@@ -57,5 +62,34 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
             }
         }
     }
+    override fun onStart() {
+        super.onStart()
+        Log.e("TAG", "onStart: " )
+    }
 
+    override fun onResume() {
+        super.onResume()
+        Log.e("TAG", "onResume: " )
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.e("TAG", "onPause: " )
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.e("TAG", "onStop: " )
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.e("TAG", "onDestroyView: " )
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("TAG", "onDestroy: " )
+    }
 }

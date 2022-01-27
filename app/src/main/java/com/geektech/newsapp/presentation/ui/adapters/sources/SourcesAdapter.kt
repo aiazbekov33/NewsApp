@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.geektech.newsapp.databinding.ItemSourcesBinding
 import com.geektech.newsapp.base.BaseComparator
+import com.geektech.newsapp.databinding.ItemSourcesBinding
 import com.geektech.newsapp.presentation.models.SourcesUI
 
 class SourcesAdapter : ListAdapter<SourcesUI, SourcesAdapter.SourcesViewHolder>(
@@ -37,6 +37,5 @@ class SourcesAdapter : ListAdapter<SourcesUI, SourcesAdapter.SourcesViewHolder>(
             txtItemCountry.text = it.language
             itemCategory.text = it.category
         }
-
     }
 }

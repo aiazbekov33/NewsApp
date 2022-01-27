@@ -13,7 +13,7 @@ class TopHeadlinesRepositoryImpl @Inject constructor(
     private val service: TopHeadlinesApiService
 ) : BaseRepository(), TopHeadlinesRepository {
 
-    override fun fetchTopHeadlines(page:Int):Flow<Resource<List<TopHeadlinesModel>>> = doRequest {
+    override fun fetchTopHeadlines(page: Int): Flow<Resource<List<TopHeadlinesModel>>> = doRequest {
         service.fetchTopHeadlines("us", page).articles.map { it.toDomain() }
     }
 

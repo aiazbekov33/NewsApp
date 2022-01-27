@@ -30,6 +30,7 @@ class TopHeadlinesViewModel @Inject constructor(
     init {
         fetchNewsApp(1)
     }
+
     override fun fetchNewsApp(page: Int) {
         _topHeadlinesState.subscribeTo(
             { fetchTopHeadlinesUseCases(page) },
@@ -37,15 +38,13 @@ class TopHeadlinesViewModel @Inject constructor(
     }
 
     override fun fetchNewsApp2(page: Int) {
-
     }
 
     override fun searchNews(q: String) {
         _searchNews.subscribeTo({
             searchNewsUseCases(q)
-        },{it.map { data-> data.toUI() }})
+        }, { it.map { data -> data.toUI() } })
     }
-
 }
 
 
