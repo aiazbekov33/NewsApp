@@ -6,9 +6,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
+import com.geektech.newsapp.base.BaseFragment
 import com.geektech.newsapp.databinding.FragmentTopHeadlinesBinding
 import com.geektech.newsapp.extensions.scrollListenNextPage
-import com.geektech.newsapp.base.BaseFragment
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import com.geektech.newsapp.presentation.state.UIState
 import com.geektech.newsapp.presentation.ui.adapters.topheadlines.TopHeadlinesAdapter
@@ -24,9 +24,8 @@ class TopHeadlinesFragment :
 
     private fun itemClick(model: TopHeadlinesUI) {
         val bundle = Bundle()
-        bundle.putSerializable("model",model)
-        findNavController().navigate(R.id.detail,bundle)
-
+        bundle.putSerializable("model", model)
+        findNavController().navigate(R.id.detail, bundle)
     }
 
     override fun initialize() = with(binding) {
@@ -58,7 +57,6 @@ class TopHeadlinesFragment :
                 }
             }
         }
-
     }
 }
 

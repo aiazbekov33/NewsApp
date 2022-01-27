@@ -3,12 +3,13 @@ package com.geektech.newsapp.presentation.ui.fragments.everything
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
+import com.geektech.newsapp.base.BaseFragment
 import com.geektech.newsapp.databinding.FragmentNewsBinding
 import com.geektech.newsapp.extensions.scrollListenNextPage
-import com.geektech.newsapp.base.BaseFragment
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import com.geektech.newsapp.presentation.state.UIState
 import com.geektech.newsapp.presentation.ui.adapters.everything.EverythingAdapter
@@ -24,12 +25,12 @@ class NewsFragment :
     private val everythingAdapter = EverythingAdapter()
     private val everythingHotNewsAdapter = EverythingHotNewsAdapter()
 
-
     override fun initialize() = with(binding) {
         recyclerNews.layoutManager = LinearLayoutManager(context)
         recyclerNews.adapter = everythingAdapter
 
-        recyclerHotNews.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        recyclerHotNews.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         recyclerHotNews.adapter = everythingHotNewsAdapter
     }
 
@@ -47,28 +48,9 @@ class NewsFragment :
         setHasOptionsMenu(true)
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu, menuInflater: MenuInflater) {
-//        menuInflater.inflate(R.menu.menu_toolbar, menu)
-//
-//        val search = menu.findItem(R.id.news_search)
-//
-//        val searchView = search.actionView as SearchView
-//        searchView.queryHint = "Search"
-//
-//        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-//            override fun onQueryTextSubmit(query: String?): Boolean {
-//                return false
-//            }
-//
-//            override fun onQueryTextChange(newText: String?): Boolean {
-//                return false
-//            }
-//        })
-//    }
-
     override fun setupObserves() {
-        viewModel.everythingState2.subscribe{
-            when(it){
+        viewModel.everythingState2.subscribe {
+            when (it) {
                 is UIState.Error -> {}
                 is UIState.Loading -> {}
                 is UIState.Success -> {
@@ -76,23 +58,25 @@ class NewsFragment :
                 }
             }
         }
+        lifecycleScope.launchWhenStarted {
+            viewModel.everythingState.subscribe {
+                when (it) {
+                    is UIState.Error -> {
 
-        viewModel.everythingState.subscribe {
-            when (it) {
-                is UIState.Error -> {
-
+                    }
+                    is UIState.Loading -> {
                 }
                 is UIState.Loading -> {
 
-                }
-                is UIState.Success -> {
-                    val list = ArrayList<TopHeadlinesUI>(everythingAdapter.currentList)
-                    it.data.let { data -> list.addAll(data) }
-                    everythingAdapter.submitList(list)
+                    }
+                    is UIState.Success -> {
+                        val list = ArrayList<TopHeadlinesUI>(everythingAdapter.currentList)
+                        it.data.let { data -> list.addAll(data) }
+                        everythingAdapter.submitList(list)
+                        binding.swipeRefresh.isRefreshing = false
+                    }
                 }
             }
         }
-
     }
-
 }

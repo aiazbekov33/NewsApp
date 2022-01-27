@@ -65,7 +65,6 @@ class EverythingHotNewsAdapter :
 
             textForHotNews.text = it.title
             dateTop.text = it.publishedAt
-
         }
     }
 }

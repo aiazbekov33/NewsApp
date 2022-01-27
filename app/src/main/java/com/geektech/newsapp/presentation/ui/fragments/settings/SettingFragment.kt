@@ -10,6 +10,7 @@ import com.geektech.newsapp.R
 import com.geektech.newsapp.base.BaseFragment
 import com.geektech.newsapp.databinding.FragmentSettingBinding
 import com.geektech.newsapp.extensions.LocalHelper
+import com.geektech.newsapp.databinding.FragmentSettingBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,8 +24,11 @@ class SettingFragment() :
     override fun setupDarkNight() = with(binding) {
         DarkModeScSetting.setOnClickListener {
             if (DarkModeScSetting.isChecked) {
+    override fun setupDarkNight() = with(binding) {
+        switchCompat.setOnClickListener {
+            if (switchCompat.isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            } else {
+            }else{
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
         }
@@ -32,6 +36,7 @@ class SettingFragment() :
 
     override fun setupListeners() {
         binding.searchButton.setOnClickListener {
+        binding.search.setOnClickListener {
             findNavController().navigate(R.id.searchFragment)
         }
     }

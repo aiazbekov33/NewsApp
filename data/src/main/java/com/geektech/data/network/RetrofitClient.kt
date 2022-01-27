@@ -1,10 +1,10 @@
 package com.geektech.data.network
 
-import com.geektech.domain.common.Constants
 import com.geektech.data.network.apiservice.EverythingApiService
 import com.geektech.data.network.apiservice.SourceApiService
 import com.geektech.data.network.apiservice.TopHeadlinesApiService
 import com.geektech.data.network.interceptor.ApiKeyInterceptor
+import com.geektech.domain.common.Constants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

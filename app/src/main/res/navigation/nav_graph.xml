@@ -34,8 +34,7 @@
         android:id="@+id/detail"
         android:name="com.geektech.newsapp.presentation.ui.fragments.topheadlines.detail.Detail"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
-    </fragment>
+        tools:layout="@layout/fragment_detail"></fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.geektech.newsapp.presentation.ui.fragments.search.SearchFragment"

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.ui.fragments.settings.SettingFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,357 +13,306 @@
 
         <ImageView
             android:id="@+id/CIV_setting"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="15dp"
             android:background="@drawable/image"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="15dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginLeft="10dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"/>
 
         <TextView
             android:id="@+id/Name_tv_setting"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
-            android:text="@string/geeketch_geektevich"
+            android:text="Geeketch Geektevich"
             android:textColor="@color/setting_textColor1"
             android:textSize="13dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="30dp"
             app:layout_constraintLeft_toRightOf="@id/CIV_setting"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/Account_tv_setting"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="7dp"
-            android:text="@string/geektech_gmail_com"
+            android:text="geektech@gmail.com"
             android:textColor="@color/setting_textColor1"
             android:textSize="10dp"
+            app:layout_constraintTop_toBottomOf="@id/Name_tv_setting"
+            android:layout_marginTop="5dp"
             app:layout_constraintLeft_toRightOf="@id/CIV_setting"
-            app:layout_constraintTop_toBottomOf="@id/Name_tv_setting" />
+            android:layout_marginLeft="10dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/Edit_btn_setting"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="40dp"
+            android:text="Edit"
+            android:backgroundTint="@color/teal_700"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="30dp"
-            android:backgroundTint="@color/setting_buttonColor"
-            android:text="@string/edit"
-            app:cornerRadius="10dp"
-            app:layout_constraintLeft_toRightOf="@id/Name_tv_setting"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginRight="10dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:cornerRadius="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/Preferences_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="25dp"
-            android:text="@string/preferences"
+            android:text="Preferences"
             android:textColor="@color/setting_textColor2"
             android:textSize="15dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/CIV_setting" />
-
-        <ImageView
-            android:id="@+id/DarkMode_iv_setting"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="7dp"
+            app:layout_constraintTop_toBottomOf="@id/CIV_setting"
             android:layout_marginTop="25dp"
-            android:background="@drawable/ic_dark_mode"
-            android:backgroundTint="@color/setting_imageColor2"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Preferences_tv" />
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <FrameLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dark_mode"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/Preferences_tv"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/recive_background_message_for_me">
+
+
+            <ImageView
+                android:id="@+id/DarkMode_iv"
+                app:layout_constraintTop_toBottomOf="@id/Preferences_tv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_dark_mode"
+                android:backgroundTint="@color/setting_imageColor2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_compat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"
+                android:checked="false"
+                android:text="Dark Mode"
+                android:textOff=""
+                android:textOn=""
+                app:showText="true"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/notification"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/dark_mode"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/recive_background_message_for_me">
+
+            <ImageView
+                android:id="@+id/notification_iv"
+                app:layout_constraintTop_toBottomOf="@id/Preferences_tv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_notifications"
+                android:backgroundTint="@color/setting_imageColor2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_compat_notification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"
+                android:checked="false"
+                android:text="Notification"
+                android:textOff=""
+                android:textOn=""
+                app:showText="true"/>
+        </FrameLayout>
+
 
         <TextView
-            android:id="@+id/DarkMode_tv_setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="30dp"
-            android:text="@string/darkmode"
-            android:textColor="@color/setting_textColor3"
-            android:textSize="13dp"
-            app:layout_constraintLeft_toRightOf="@id/DarkMode_iv_setting"
-            app:layout_constraintTop_toBottomOf="@id/Preferences_tv" />
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/DarkMode_sc_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="15dp"
-            android:thumb="@drawable/thump"
-            app:layout_constraintLeft_toRightOf="@id/DarkMode_tv_setting"
-            app:layout_constraintTop_toBottomOf="@id/Preferences_tv"
-            app:track="@drawable/track" />
-
-        <ImageView
-            android:id="@+id/Notification_iv_setting"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/ic_notifications"
-            android:backgroundTint="@color/setting_imageColor2"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/DarkMode_iv_setting" />
-
-        <TextView
-            android:id="@+id/Notification_tv_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="50dp"
-            android:text="@string/notification"
-            android:textColor="@color/setting_textColor3"
-            android:textSize="13dp"
-            app:layout_constraintLeft_toRightOf="@id/Notification_iv_setting"
-            app:layout_constraintTop_toBottomOf="@id/DarkMode_tv_setting" />
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/Name_sc_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="143dp"
-            android:layout_marginTop="25dp"
-            android:thumb="@drawable/thump"
-            app:layout_constraintLeft_toRightOf="@id/Notification_tv_setting"
-            app:layout_constraintTop_toBottomOf="@id/DarkMode_sc_setting"
-            app:track="@drawable/track" />
-
-        <TextView
+            android:text="Summary"
             android:id="@+id/Summary_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="25dp"
-            android:text="@string/summary"
-            android:textColor="@color/setting_textColor2"
-            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/notification"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Notification_iv_setting" />
+            android:layout_marginLeft="15dp"/>
 
-        <ImageView
-            android:id="@+id/Location_iv_setting"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/ic_location"
-            android:backgroundTint="@color/setting_imageColor2"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Summary_tv" />
-
-        <TextView
-            android:id="@+id/Location_tv_setting"
-            android:layout_width="wrap_content"
+        <FrameLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="30dp"
-            android:text="@string/news_by_location"
-            android:textColor="@color/setting_textColor3"
-            android:textSize="13dp"
-            app:layout_constraintLeft_toRightOf="@id/Location_iv_setting"
-            app:layout_constraintTop_toBottomOf="@id/Summary_tv" />
+            android:id="@+id/location"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/Summary_tv"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/recive_background_message_for_me">
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/Location_sc_setting"
-            android:layout_width="wrap_content"
+
+            <ImageView
+                android:id="@+id/location_iv"
+                app:layout_constraintTop_toBottomOf="@id/Preferences_tv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_location"
+                android:backgroundTint="@color/setting_imageColor2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_compat_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60dp"
+                android:checked="false"
+                android:text="Location"
+                android:textOff=""
+                android:textOn=""
+                app:showText="true"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="109dp"
-            android:layout_marginTop="25dp"
-            android:thumb="@drawable/thump"
-            app:layout_constraintLeft_toRightOf="@id/Location_tv_setting"
-            app:layout_constraintTop_toBottomOf="@id/Summary_tv"
-            app:track="@drawable/track" />
+            android:id="@+id/language"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/location"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/recive_background_message_for_me">
 
-        <ImageView
-            android:id="@+id/Time_iv_setting"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/ic_access_time"
-            android:backgroundTint="@color/setting_imageColor2"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Location_iv_setting" />
 
-        <TextView
-            android:id="@+id/Time_tv_setting"
-            android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/language_iv"
+                app:layout_constraintTop_toBottomOf="@id/Preferences_tv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_language"
+                android:backgroundTint="@color/setting_imageColor2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+            <TextView
+                android:id="@+id/language_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Language"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_arrow_forward" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="50dp"
-            android:text="@string/time_to_read"
-            android:textColor="@color/setting_textColor3"
-            android:textSize="13dp"
-            app:layout_constraintLeft_toRightOf="@id/Time_iv_setting"
-            app:layout_constraintTop_toBottomOf="@id/Location_tv_setting" />
+            android:id="@+id/help"
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/language"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/recive_background_message_for_me">
 
-        <ImageButton
-            android:id="@+id/Time_ib_setting"
-            android:layout_width="wrap_content"
+
+            <ImageView
+                android:id="@+id/help_iv"
+                app:layout_constraintTop_toBottomOf="@id/Preferences_tv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_help"
+                android:backgroundTint="@color/setting_imageColor2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+            <TextView
+                android:id="@+id/help_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Help"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:id="@+id/add_to_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_arrow_forward" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="170dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/ic_arrow_forward"
-            android:backgroundTint="@color/setting_imageColor2"
-            app:layout_constraintLeft_toRightOf="@id/Time_tv_setting"
-            app:layout_constraintTop_toBottomOf="@id/Location_sc_setting" />
-
-        <ImageView
-            android:id="@+id/Language_iv_setting"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/ic_language"
-            android:backgroundTint="@color/setting_imageColor2"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Time_iv_setting" />
-
-        <TextView
-            android:id="@+id/Language_tv_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="50dp"
-            android:text="@string/language"
-            android:textColor="@color/setting_textColor3"
-            android:textSize="13dp"
-            app:layout_constraintLeft_toRightOf="@id/Language_iv_setting"
-            app:layout_constraintTop_toBottomOf="@id/Time_tv_setting" />
-
-        <ImageButton
-            android:id="@+id/Language_ib_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="187dp"
-            android:layout_marginTop="43dp"
-            android:background="@drawable/ic_arrow_forward"
-            android:backgroundTint="@color/setting_imageColor2"
-            app:layout_constraintLeft_toRightOf="@id/Language_tv_setting"
-            app:layout_constraintTop_toBottomOf="@id/Time_ib_setting" />
-
-        <ImageView
-            android:id="@+id/Block_iv_setting"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/ic_block"
-            android:backgroundTint="@color/setting_imageColor2"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Language_iv_setting" />
-
-        <TextView
-            android:id="@+id/Block_tv_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="50dp"
-            android:text="@string/block_content_and_sources"
-            android:textColor="@color/setting_textColor3"
-            android:textSize="13dp"
-            app:layout_constraintLeft_toRightOf="@id/Block_iv_setting"
-            app:layout_constraintTop_toBottomOf="@id/Language_tv_setting" />
-
-        <ImageButton
-            android:id="@+id/Block_ib_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="90dp"
-            android:layout_marginTop="43dp"
-            android:background="@drawable/ic_arrow_forward"
-            android:backgroundTint="@color/setting_imageColor2"
-            app:layout_constraintLeft_toRightOf="@id/Block_tv_setting"
-            app:layout_constraintTop_toBottomOf="@id/Language_ib_setting" />
-
-        <ImageView
-            android:id="@+id/Help_iv_setting"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/ic_help"
-            android:backgroundTint="@color/setting_imageColor2"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Block_iv_setting" />
-
-        <TextView
-            android:id="@+id/Help_tv_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="50dp"
-            android:text="@string/help"
-            android:textColor="@color/setting_textColor3"
-            android:textSize="13dp"
-            app:layout_constraintLeft_toRightOf="@id/Help_iv_setting"
-            app:layout_constraintTop_toBottomOf="@id/Block_tv_setting" />
-
-        <ImageButton
-            android:id="@+id/Help_ib_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="215dp"
-            android:layout_marginTop="43dp"
-            android:background="@drawable/ic_arrow_forward"
-            android:backgroundTint="@color/setting_imageColor2"
-            app:layout_constraintLeft_toRightOf="@id/Help_tv_setting"
-            app:layout_constraintTop_toBottomOf="@id/Block_ib_setting" />
-
-
-        <!--        <ImageButton-->
-        <!--            android:id="@+id/Block_ib_setting"-->
-        <!--            app:layout_constraintTop_toBottomOf="@id/Language_ib_setting"-->
-        <!--            android:layout_marginTop="43dp"-->
-        <!--            app:layout_constraintLeft_toRightOf="@id/Block_tv_setting"-->
-        <!--            android:layout_marginLeft="90dp"-->
-        <!--            android:background="@drawable/ic_arrow_forward"-->
-        <!--            android:backgroundTint="@color/setting_imageColor2"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"/>-->
-
-        <ImageView
             android:id="@+id/search"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/ic_search"
-            android:backgroundTint="@color/setting_imageColor2"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/Help_ib_setting" />
+            android:padding="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/help"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@drawable/recive_background_message_for_me">
 
-        <TextView
-            android:id="@+id/search_tv_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="50dp"
-            android:text="@string/search"
-            android:textColor="@color/setting_textColor3"
-            android:textSize="13dp"
-            app:layout_constraintLeft_toRightOf="@id/Help_iv_setting"
-            app:layout_constraintTop_toBottomOf="@id/Help_tv_setting" />
 
-        <ImageButton
-            android:id="@+id/search_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="215dp"
-            android:layout_marginTop="43dp"
-            android:background="@drawable/ic_arrow_forward"
-            android:backgroundTint="@color/setting_imageColor2"
-            app:layout_constraintLeft_toRightOf="@id/Help_tv_setting"
-            app:layout_constraintTop_toBottomOf="@id/Help_ib_setting" />
+            <ImageView
+                android:id="@+id/search_iv"
+                app:layout_constraintTop_toBottomOf="@id/Preferences_tv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_search"
+                android:backgroundTint="@color/setting_imageColor2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+
+            <TextView
+                android:id="@+id/search_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="60dp"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:id="@+id/add_to_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_arrow_forward" />
+
+        </FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.cardview.widget.CardView>
