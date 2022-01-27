@@ -38,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.geektech.newsapp.presentation.ui.fragments.topheadlines.SearchFragment"
+        android:name="com.geektech.newsapp.presentation.ui.fragments.search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
 
