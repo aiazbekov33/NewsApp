@@ -5,11 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.geektech.newsapp.databinding.SearchItemsBinding
 import com.geektech.newsapp.base.BaseComparator
+import com.geektech.newsapp.databinding.SearchItemsBinding
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 
-class SearchAdapter(private val itemClick:(model: TopHeadlinesUI)-> Unit) :
+class SearchAdapter(private val itemClick: (model: TopHeadlinesUI) -> Unit) :
     ListAdapter<TopHeadlinesUI, SearchAdapter.TopHeadlinesViewHolder>(
         BaseComparator()
     ) {
@@ -18,7 +18,13 @@ class SearchAdapter(private val itemClick:(model: TopHeadlinesUI)-> Unit) :
         parent: ViewGroup,
         viewType: Int
     ): TopHeadlinesViewHolder {
-        return TopHeadlinesViewHolder(SearchItemsBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return TopHeadlinesViewHolder(
+            SearchItemsBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(
@@ -31,16 +37,13 @@ class SearchAdapter(private val itemClick:(model: TopHeadlinesUI)-> Unit) :
         }
     }
 
-
-
-
     inner class TopHeadlinesViewHolder(
         private val binding: SearchItemsBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
         init {
             itemView.setOnClickListener {
-                getItem(absoluteAdapterPosition)?.let{
+                getItem(absoluteAdapterPosition)?.let {
                     itemClick(it)
                 }
             }
@@ -51,6 +54,4 @@ class SearchAdapter(private val itemClick:(model: TopHeadlinesUI)-> Unit) :
             image.load(it.urlToImage)
         }
     }
-
-
 }

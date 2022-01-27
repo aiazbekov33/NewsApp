@@ -8,15 +8,16 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
-import com.geektech.newsapp.databinding.FragmentSearchBinding
 import com.geektech.newsapp.base.BaseFragment
+import com.geektech.newsapp.databinding.FragmentSearchBinding
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import com.geektech.newsapp.presentation.state.UIState
 import com.geektech.newsapp.presentation.ui.adapters.search.SearchAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SearchFragment : BaseFragment<FragmentSearchBinding, TopHeadlinesViewModel>(R.layout.fragment_search) {
+class SearchFragment :
+    BaseFragment<FragmentSearchBinding, TopHeadlinesViewModel>(R.layout.fragment_search) {
 
     override val binding: FragmentSearchBinding by viewBinding(FragmentSearchBinding::bind)
     override val viewModel: TopHeadlinesViewModel by viewModels()
@@ -27,32 +28,28 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, TopHeadlinesViewModel
         viewModel.searchNews(currentText)
     }
 
-
-
     override fun initialize() {
         adapter = SearchAdapter(this::itemClick)
         binding.recycler.adapter = adapter
-
-
     }
 
     private fun itemClick(model: TopHeadlinesUI) {
         val bundle = Bundle()
-        bundle.putSerializable("model",model)
-        findNavController().navigate(R.id.detail,bundle)
+        bundle.putSerializable("model", model)
+        findNavController().navigate(R.id.detail, bundle)
     }
 
     override fun setupRequests() {
         binding.edit.doAfterTextChanged {
             currentText = it?.toString() ?: ""
             handler.removeCallbacks(searchRunnable)
-            handler.postDelayed(searchRunnable,500L)
+            handler.postDelayed(searchRunnable, 500L)
         }
     }
 
     override fun setupObserves() {
-        viewModel.searchNews.subscribe{
-            when(it){
+        viewModel.searchNews.subscribe {
+            when (it) {
                 is UIState.Error -> {}
                 is UIState.Loading -> {}
                 is UIState.Success -> {
@@ -61,6 +58,4 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, TopHeadlinesViewModel
             }
         }
     }
-
-
 }

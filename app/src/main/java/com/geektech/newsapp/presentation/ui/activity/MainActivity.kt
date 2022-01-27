@@ -11,7 +11,7 @@ import com.geektech.newsapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
 
@@ -23,31 +23,44 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupNavigation()
+        setupListener()
     }
 
     private fun setupNavigation() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
-//        val appBarConfiguration = AppBarConfiguration.Builder(
-//            R.id.navigation_top_headlines,
-//            R.id.navigation_new,
-//            R.id.navigation_setting,
-//            R.id.navigation_source
-//        ).build()
+        val appBarConfiguration = AppBarConfiguration.Builder(
+            R.id.navigation_top_headlines,
+            R.id.navigation_new,
+            R.id.navigation_source,
+            R.id.searchFragment
+
+        ).build()
         setupWithNavController(binding.bottomNav, navController)
-//        setupActionBarWithNavController(this, navController, appBarConfiguration)
+        setupActionBarWithNavController(this, navController, appBarConfiguration)
     }
 
-//    private fun setupActionBarWithNavController(
-//        activity: MainActivity,
-//        navController: NavController,
-//        appBarConfiguration: AppBarConfiguration
-//    ) {
-//
-//    }
+    private fun setupListener() {
+        clickOpenSearch()
+    }
 
-//    override fun onSupportNavigateUp(): Boolean {
-//        return super.onSupportNavigateUp() || super.onSupportNavigateUp()
-//    }
+    private fun clickOpenSearch() {
+        binding.topAppBar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.searchFragment -> {
+                    navController.navigate(R.id.searchFragment)
+                    true
+                }
+                else -> false
+            }
+        }
+    }
+
+    private fun setupActionBarWithNavController(
+        activity: MainActivity,
+        navController: NavController,
+        appBarConfiguration: AppBarConfiguration
+    ) {
+    }
 }

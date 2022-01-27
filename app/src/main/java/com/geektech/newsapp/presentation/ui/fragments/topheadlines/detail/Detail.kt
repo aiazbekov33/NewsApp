@@ -4,8 +4,8 @@ import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import coil.load
 import com.geektech.newsapp.R
-import com.geektech.newsapp.databinding.FragmentDetailBinding
 import com.geektech.newsapp.base.BaseFragment
+import com.geektech.newsapp.databinding.FragmentDetailBinding
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import com.geektech.newsapp.presentation.ui.fragments.topheadlines.TopHeadlinesViewModel
 
@@ -14,8 +14,8 @@ import com.geektech.newsapp.presentation.ui.fragments.topheadlines.TopHeadlinesV
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-
-class Detail : BaseFragment<FragmentDetailBinding, TopHeadlinesViewModel>(R.layout.fragment_detail) {
+class Detail :
+    BaseFragment<FragmentDetailBinding, TopHeadlinesViewModel>(R.layout.fragment_detail) {
 
     override val binding: FragmentDetailBinding by viewBinding(FragmentDetailBinding::bind)
     override val viewModel: TopHeadlinesViewModel by viewModels()
@@ -30,5 +30,5 @@ class Detail : BaseFragment<FragmentDetailBinding, TopHeadlinesViewModel>(R.layo
             binding.description.text = model.description
         }
     }
-    }
+}
 

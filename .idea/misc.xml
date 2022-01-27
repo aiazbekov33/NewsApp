@@ -6,6 +6,7 @@
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable-night/thump.xml" value="0.19537037037037036" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable-night/track.xml" value="0.19537037037037036" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2484375" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable-v24/recive_background_message_for_me.xml" value="0.2484375" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_chat.xml" value="0.2484375" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_home.xml" value="0.2484375" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2484375" />
@@ -13,14 +14,16 @@
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_search.xml" value="0.1296875" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_settings.xml" value="0.1296875" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/ic_time.xml" value="0.2484375" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/recive_background_message_for_me.xml" value="0.2484375" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/thump.xml" value="0.19537037037037036" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/drawable/track.xml" value="0.19537037037037036" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_bookmark.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_detail.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_disconary.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_news.xml" value="0.2" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_search.xml" value="0.11354166666666667" />
-        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_setting.xml" value="0.4" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_setting.xml" value="0.152" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_sources.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_top_headlines.xml" value="0.16733067729083664" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/fragment_topheadlines.xml" value="0.23229166666666667" />
@@ -28,6 +31,7 @@
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/item_news.xml" value="0.4" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/item_sources.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/search_items.xml" value="0.11354166666666667" />
+        <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/layout/searchable.xml" value="0.19429347826086957" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/menu/app_bar.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/menu/bottom_navigation.xml" value="0.264" />
         <entry key="..\:/Users/Lucifer/AndroidStudioProjects/NewsApp/app/src/main/res/menu/menu_toolbar.xml" value="0.176" />
