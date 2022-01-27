@@ -8,7 +8,7 @@ class ApiKeyInterceptor : Interceptor {
         val request = chain
             .request()
             .newBuilder()
-            .addHeader("apiKey", "&apiKey=4633cbf21ce74b59850d9c56f1cbc60f")
+            .addHeader("X-Api-Key", "&apiKey=0ef15f73c03b4ca0a19a25cbdf3c43d2")
             .build()
         return chain.proceed(request)
     }

@@ -1,4 +1,4 @@
-package com.geektech.newsapp.presentation.ui.fragments.topheadlines
+package com.geektech.newsapp.presentation.ui.fragments.search
 
 import android.os.Bundle
 import android.os.Handler
@@ -13,6 +13,7 @@ import com.geektech.newsapp.databinding.FragmentSearchBinding
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import com.geektech.newsapp.presentation.state.UIState
 import com.geektech.newsapp.presentation.ui.adapters.search.SearchAdapter
+import com.geektech.newsapp.presentation.ui.fragments.topheadlines.TopHeadlinesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

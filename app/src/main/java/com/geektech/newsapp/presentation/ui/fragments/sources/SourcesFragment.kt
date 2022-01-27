@@ -42,14 +42,12 @@ class SourcesFragment :
 
                 }
                 is UIState.Loading -> {
-                    binding.swipeRefresh.isRefreshing = true
 
                 }
                 is UIState.Success -> {
                     val list = ArrayList<SourcesUI>(sourcesAdapter.currentList)
                     it.data.let { data -> list.addAll(data) }
                     sourcesAdapter.submitList(list)
-                    binding.swipeRefresh.isRefreshing = false
                 }
             }
         }

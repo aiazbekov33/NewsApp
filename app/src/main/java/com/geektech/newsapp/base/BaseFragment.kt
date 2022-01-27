@@ -28,6 +28,7 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
         setupRequests()
         setupObserves()
         setupDarkNight()
+        setupLanguage()
         mySearchView()
     }
 
@@ -45,9 +46,16 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
 
     open fun setupObserves() {
     }
-    open fun swipeRefresh(){}
+
+    open fun swipeRefresh() {
+
+    }
 
     open fun setupDarkNight() {
+
+    }
+
+    open fun setupLanguage() {
     }
 
     protected fun <T> StateFlow<UIState<T>>.subscribe(
