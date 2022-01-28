@@ -16,7 +16,7 @@ import com.geektech.newsapp.base.BaseComparator
 import com.geektech.newsapp.databinding.ItemNewsBinding
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 
-class EverythingAdapter :
+class EverythingAdapter(private val itemClick:(model: TopHeadlinesUI)-> Unit) :
     ListAdapter<TopHeadlinesUI, EverythingAdapter.EverythingViewHolder>(
         BaseComparator()
     ) {
@@ -34,9 +34,17 @@ class EverythingAdapter :
         getItem(position)?.let { holder.onBind(it) }
     }
 
-    class EverythingViewHolder(
+    inner class EverythingViewHolder(
         private val binding: ItemNewsBinding
     ) : RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener {
+                getItem(absoluteAdapterPosition)?.let{
+                    itemClick(it)
+                }
+            }
+        }
 
         fun onBind(it: TopHeadlinesUI) = with(binding) {
             Glide.with(newsIm)

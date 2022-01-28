@@ -5,7 +5,9 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
 import com.geektech.newsapp.base.BaseFragment
@@ -15,6 +17,7 @@ import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import com.geektech.newsapp.presentation.state.UIState
 import com.geektech.newsapp.presentation.ui.adapters.everything.EverythingAdapter
 import com.geektech.newsapp.presentation.ui.adapters.everything.EverythingHotNewsAdapter
+import com.geektech.newsapp.presentation.ui.fragments.topheadlines.TopHeadlinesFragment_GeneratedInjector
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,8 +26,9 @@ class NewsFragment :
 
     override val binding by viewBinding(FragmentNewsBinding::bind)
     override val viewModel: NewEverythingViewModel by viewModels()
-    private val everythingAdapter = EverythingAdapter()
-    private val everythingHotNewsAdapter = EverythingHotNewsAdapter()
+    private val everythingAdapter = EverythingAdapter(this::itemClickVertical)
+    private val everythingHotNewsAdapter = EverythingHotNewsAdapter(this::itemClickHorizontal)
+
 
     override fun initialize() = with(binding) {
         recyclerNews.layoutManager = LinearLayoutManager(context)
@@ -39,6 +43,24 @@ class NewsFragment :
         setupOnScrollListener()
     }
 
+    override fun checkRecycler()= with(binding) {
+        recyclerNews.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if (recyclerView.canScrollVertically(-1)) {
+                    recyclerHotNews.visibility = View.GONE;
+                }else{
+                    if (recyclerHotNews.visibility != View.VISIBLE) {
+                        recyclerHotNews.visibility = View.VISIBLE;
+
+                    }
+                }
+
+            }
+        })
+
+    }
+
     private fun setupOnScrollListener() = with(binding) {
         recyclerNews.scrollListenNextPage(viewModel)
         recyclerHotNews.scrollListenNextPage(viewModel)
@@ -47,6 +69,14 @@ class NewsFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
+    }
+
+    private fun itemClickHorizontal(model: TopHeadlinesUI) {
+        findNavController().navigate(NewsFragmentDirections.actionNavigationNewToDetailEverything(model))
+    }
+
+    private fun itemClickVertical(model: TopHeadlinesUI) {
+        findNavController().navigate(NewsFragmentDirections.actionNavigationNewToDetailEverything(model))
     }
 
     override fun setupObserves() {
