@@ -9,6 +9,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
 import com.geektech.newsapp.base.BaseFragment
 import com.geektech.newsapp.databinding.FragmentNewsBinding
+import com.geektech.newsapp.presentation.base.BaseFragment
+import com.geektech.newsapp.presentation.ui.adapter.TopHeadlinesAdapter
 import com.geektech.newsapp.extensions.scrollListenNextPage
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import com.geektech.newsapp.presentation.state.UIState

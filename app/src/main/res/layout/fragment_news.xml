@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.ui.fragments.everything.NewsFragment">
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_hot_news"
@@ -34,11 +33,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/recycler_hot_news"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recent_news"
-        tools:listitem="@layout/item_news" />
-
+        app:layout_constraintTop_toBottomOf="@+id/recycler_hot_news"
+        tools:listitem="@layout/item_news"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -3,6 +3,7 @@ package com.geektech.newsapp.base
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toolbar
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
