@@ -3,20 +3,20 @@
     <item
         android:id="@+id/navigation_new"
         android:title="@string/everything"
-        android:icon="@drawable/ic_home"/>
+        android:icon="@drawable/ic_news"/>
 
     <item
         android:id="@+id/navigation_top_headlines"
-        android:title="Top Headlines"
-        android:icon="@drawable/ic_discovery"/>
+        android:title="@string/top_headlines"
+        android:icon="@drawable/top"/>
 
     <item
         android:id="@+id/navigation_source"
         android:title="@string/sources"
-        android:icon="@drawable/ic_bookmark"/>
+        android:icon="@drawable/ic_sources"/>
 
     <item
         android:id="@+id/navigation_setting"
         android:title="@string/setting"
-        android:icon="@drawable/ic_settings"/>
+        android:icon="@drawable/settings"/>
 </menu>
