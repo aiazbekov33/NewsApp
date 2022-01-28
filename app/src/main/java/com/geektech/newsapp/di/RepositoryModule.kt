@@ -1,11 +1,11 @@
 package com.geektech.newsapp.di
 
-import com.geektech.newsapp.data.repository.EverythingRepositoryImpl
-import com.geektech.newsapp.data.repository.SourcesRepositoryImpl
-import com.geektech.newsapp.data.repository.TopHeadlinesRepositoryImpl
-import com.geektech.newsapp.domain.repository.EverythingRepository
-import com.geektech.newsapp.domain.repository.SourcesRepository
-import com.geektech.newsapp.domain.repository.TopHeadlinesRepository
+import com.geektech.data.repository.EverythingRepositoryImpl
+import com.geektech.data.repository.SourcesRepositoryImpl
+import com.geektech.data.repository.TopHeadlinesRepositoryImpl
+import com.geektech.domain.repositories.EverythingRepository
+import com.geektech.domain.repositories.SourcesRepository
+import com.geektech.domain.repositories.TopHeadlinesRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -28,4 +28,5 @@ abstract class RepositoryModule {
     @Binds
     abstract fun provideSourcesRepository(sourcesRepositoryImpl: SourcesRepositoryImpl
     ): SourcesRepository
+
 }

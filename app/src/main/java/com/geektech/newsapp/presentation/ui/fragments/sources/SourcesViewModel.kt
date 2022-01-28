@@ -1,13 +1,10 @@
 package com.geektech.newsapp.presentation.ui.fragments.sources
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import com.geektech.newsapp.presentation.base.BaseViewModel
-import com.geektech.newsapp.domain.models.SourcesModel
-import com.geektech.newsapp.domain.usecases.FetchSourcesUseCases
-import com.geektech.newsapp.presentation.base.BaseRequest
+import com.geektech.newsapp.base.BaseViewModel
+import com.geektech.domain.usecases.FetchSourcesUseCases
+import com.geektech.newsapp.base.BaseRequest
 import com.geektech.newsapp.presentation.models.SourcesUI
-import com.geektech.newsapp.presentation.models.toUI
+import com.geektech.newsapp.presentation.models.toUi
 import com.geektech.newsapp.presentation.state.UIState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,11 +14,14 @@ import javax.inject.Inject
 @HiltViewModel
 class SourcesViewModel @Inject constructor(
     private val sourcesUseCases: FetchSourcesUseCases
-) : BaseViewModel(),BaseRequest {
+) : BaseViewModel(), BaseRequest {
 
     private val _sourcesState = MutableStateFlow<UIState<List<SourcesUI>>>(UIState.Loading())
     val sourcesState: StateFlow<UIState<List<SourcesUI>>> = _sourcesState
     override var page: Int = 1
+    override var q: String
+        get() = TODO("Not yet implemented")
+        set(value) {}
 
     init {
         fetchNewsApp(1)
@@ -30,8 +30,11 @@ class SourcesViewModel @Inject constructor(
     override fun fetchNewsApp(page: Int) {
         _sourcesState.subscribeTo(
             { sourcesUseCases(page) },
-            { it.map { data -> data.toUI() } }
+            { it.map { data -> data.toUi() } }
         )
     }
 
-    }
+    override fun fetchNewsApp2(page: Int) {}
+
+    override fun searchNews(q: String) {}
+}

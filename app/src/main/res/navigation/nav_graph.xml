@@ -24,6 +24,21 @@
         android:id="@+id/navigation_top_headlines"
         android:name="com.geektech.newsapp.presentation.ui.fragments.topheadlines.TopHeadlinesFragment"
         android:label="top_headlines"
-        tools:layout="@layout/fragment_top_headlines"/>
+        tools:layout="@layout/fragment_top_headlines">
+        <action
+            android:id="@+id/action_navigation_top_headlines_to_detail"
+            app:destination="@id/detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detail"
+        android:name="com.geektech.newsapp.presentation.ui.fragments.topheadlines.detail.Detail"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail"></fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.geektech.newsapp.presentation.ui.fragments.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
 
 </navigation>

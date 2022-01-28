@@ -1,9 +1,6 @@
 package com.geektech.newsapp.di
 
-import com.geektech.newsapp.data.network.RetrofitClient
-import com.geektech.newsapp.data.network.apiservice.EverythingApiService
-import com.geektech.newsapp.data.network.apiservice.SourceApiService
-import com.geektech.newsapp.data.network.apiservice.TopHeadlinesApiService
+import com.geektech.data.network.RetrofitClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

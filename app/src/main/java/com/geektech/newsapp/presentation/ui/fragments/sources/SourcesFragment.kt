@@ -6,10 +6,10 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
 import com.geektech.newsapp.databinding.FragmentSourcesBinding
 import com.geektech.newsapp.extensions.scrollListenNextPage
-import com.geektech.newsapp.presentation.base.BaseFragment
+import com.geektech.newsapp.base.BaseFragment
 import com.geektech.newsapp.presentation.models.SourcesUI
 import com.geektech.newsapp.presentation.state.UIState
-import com.geektech.newsapp.presentation.ui.adapter.SourcesAdapter
+import com.geektech.newsapp.presentation.ui.adapters.sources.SourcesAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,9 +20,11 @@ class SourcesFragment :
     override val viewModel: SourcesViewModel by viewModels()
     private val sourcesAdapter = SourcesAdapter()
 
-    override fun initialize() = with(binding) {
-        recyclerSources.layoutManager = LinearLayoutManager(context)
-        recyclerSources.adapter = sourcesAdapter
+    override fun initialize() {
+       binding.recyclerSources.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = sourcesAdapter
+        }
     }
 
     override fun setupListeners() {
@@ -40,7 +42,6 @@ class SourcesFragment :
 
                 }
                 is UIState.Loading -> {
-                    binding.swipeRefresh.isRefreshing = true
 
                 }
                 is UIState.Success -> {
@@ -50,7 +51,5 @@ class SourcesFragment :
                 }
             }
         }
-
     }
-
 }
