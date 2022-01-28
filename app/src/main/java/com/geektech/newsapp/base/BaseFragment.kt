@@ -3,6 +3,7 @@ package com.geektech.newsapp.base
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toolbar
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -29,6 +30,7 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
         checkRecycler()
         setupObserves()
         setupDarkNight()
+        setupLanguage()
         mySearchView()
     }
 
@@ -48,9 +50,16 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
 
     open fun setupObserves() {
     }
-    open fun swipeRefresh(){}
+
+    open fun swipeRefresh() {
+
+    }
 
     open fun setupDarkNight() {
+
+    }
+
+    open fun setupLanguage() {
     }
 
     protected fun <T> StateFlow<UIState<T>>.subscribe(

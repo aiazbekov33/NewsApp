@@ -53,7 +53,7 @@ class EverythingAdapter(private val itemClick:(model: TopHeadlinesUI)-> Unit) :
                     override fun onLoadFailed(
                         e: GlideException?,
                         model: Any?,
-                        target: com.bumptech.glide.request.target.Target<Drawable?>?,
+                        target: Target<Drawable?>?,
                         isFirstResource: Boolean
                     ): Boolean {
                         progressPhoto.visibility = View.GONE

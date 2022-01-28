@@ -99,7 +99,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="60dp"
                 android:checked="false"
-                android:text="Dark Mode"
+                android:text="@string/dark_mode"
                 android:textOff=""
                 android:textOn=""
                 app:showText="true"/>
@@ -135,7 +135,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="60dp"
                 android:checked="false"
-                android:text="Notification"
+                android:text="@string/notification"
                 android:textOff=""
                 android:textOn=""
                 app:showText="true"/>
@@ -182,7 +182,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="60dp"
                 android:checked="false"
-                android:text="Location"
+                android:text="@string/location"
                 android:textOff=""
                 android:textOn=""
                 app:showText="true"/>
@@ -215,7 +215,7 @@
                 android:id="@+id/language_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Language"
+                android:text="@string/language"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="60dp"
                 android:textColor="@color/black"/>
@@ -224,8 +224,8 @@
                 android:id="@+id/add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
                 android:layout_gravity="right"
+                android:layout_marginTop="12dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/ic_arrow_forward" />
         </FrameLayout>

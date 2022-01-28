@@ -13,4 +13,5 @@ fun RecyclerView.scrollListenNextPage(viewModel: BaseRequest) {
             }
         }
     })
+
 }

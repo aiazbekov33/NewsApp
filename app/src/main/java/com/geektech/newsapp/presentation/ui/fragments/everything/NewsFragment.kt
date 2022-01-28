@@ -1,7 +1,6 @@
 package com.geektech.newsapp.presentation.ui.fragments.everything
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -12,6 +11,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
 import com.geektech.newsapp.base.BaseFragment
 import com.geektech.newsapp.databinding.FragmentNewsBinding
+import com.geektech.newsapp.presentation.base.BaseFragment
+import com.geektech.newsapp.presentation.ui.adapter.TopHeadlinesAdapter
 import com.geektech.newsapp.extensions.scrollListenNextPage
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import com.geektech.newsapp.presentation.state.UIState
@@ -96,13 +97,14 @@ class NewsFragment :
 
                     }
                     is UIState.Loading -> {
+                }
+                is UIState.Loading -> {
 
                     }
                     is UIState.Success -> {
                         val list = ArrayList<TopHeadlinesUI>(everythingAdapter.currentList)
                         it.data.let { data -> list.addAll(data) }
                         everythingAdapter.submitList(list)
-                        binding.swipeRefresh.isRefreshing = false
                     }
                 }
             }
