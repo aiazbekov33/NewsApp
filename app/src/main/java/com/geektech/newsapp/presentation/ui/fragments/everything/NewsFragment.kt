@@ -56,6 +56,23 @@ class NewsFragment :
         setupOnScrollListener()
     }
 
+    override fun checkRecycler()= with(binding) {
+        recyclerNews.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if (recyclerView.canScrollVertically(-1)) {
+                    recyclerHotNews.visibility = View.GONE;
+                }else{
+                    if (recyclerHotNews.visibility != View.VISIBLE) {
+                        recyclerHotNews.visibility = View.VISIBLE;
+                    }
+                }
+
+            }
+        })
+
+    }
+
     private fun setupOnScrollListener() = with(binding) {
         recyclerNews.scrollListenNextPage(viewModel)
         recyclerHotNews.scrollListenNextPage(viewModel)
@@ -83,8 +100,8 @@ class NewsFragment :
 
                     }
                     is UIState.Loading -> {
-                    }
-                    is UIState.Loading -> {
+                }
+                is UIState.Loading -> {
 
                     }
                     is UIState.Success -> {

@@ -35,9 +35,7 @@ class SearchFragment :
     }
 
     private fun itemClick(model: TopHeadlinesUI) {
-        val bundle = Bundle()
-        bundle.putSerializable("model", model)
-        findNavController().navigate(R.id.detail, bundle)
+       findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToDetailEverything2(model))
     }
 
     override fun setupRequests() {
