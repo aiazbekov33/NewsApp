@@ -11,8 +11,8 @@
         android:label="news"
         tools:layout="@layout/fragment_news" >
         <action
-            android:id="@+id/action_navigation_new_to_detailEverything"
-            app:destination="@id/detailEverything" />
+            android:id="@+id/action_navigation_new_to_dialogFragment"
+            app:destination="@id/dialogFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_setting"
@@ -32,6 +32,9 @@
         <action
             android:id="@+id/action_navigation_top_headlines_to_detail"
             app:destination="@id/detail" />
+        <action
+            android:id="@+id/action_navigation_top_headlines_to_dialogFragment"
+            app:destination="@id/dialogFragment" />
     </fragment>
 
     <fragment
@@ -39,27 +42,22 @@
         android:name="com.geektech.newsapp.presentation.ui.fragments.topheadlines.detail.Detail"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail">
-        <argument
-            android:name="model"
-            app:argType="com.geektech.newsapp.presentation.models.TopHeadlinesUI" />
+
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.geektech.newsapp.presentation.ui.fragments.search.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" >
-        <action
-            android:id="@+id/action_searchFragment_to_detailEverything2"
-            app:destination="@id/detailEverything" />
-    </fragment>
-    <fragment
-        android:id="@+id/detailEverything"
-        android:name="com.geektech.newsapp.presentation.ui.fragments.everything.detail.DetailEverything"
-        android:label="fragment_detail_everything"
-        tools:layout="@layout/fragment_detail_everything" >
-        <argument
-            android:name="model"
-            app:argType="com.geektech.newsapp.presentation.models.TopHeadlinesUI" />
-    </fragment>
+        tools:layout="@layout/fragment_search" />
+    <dialog
+        android:id="@+id/dialogFragment"
+        android:name="com.geektech.newsapp.presentation.ui.fragments.dialog.DialogFragment"
+        android:label="fragment_dialog"
+        tools:layout="@layout/fragment_dialog" >
+             <argument
+            android:name="image"
+            app:argType="string"
+            android:defaultValue="null" />
+    </dialog>
 
 </navigation>

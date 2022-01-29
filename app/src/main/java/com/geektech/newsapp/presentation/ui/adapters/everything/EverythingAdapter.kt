@@ -1,6 +1,7 @@
 package com.geektech.newsapp.presentation.ui.adapters.everything
 
 import android.graphics.drawable.Drawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,10 @@ import com.geektech.newsapp.base.BaseComparator
 import com.geektech.newsapp.databinding.ItemNewsBinding
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 
-class EverythingAdapter(private val itemClick:(model: TopHeadlinesUI)-> Unit) :
+class EverythingAdapter (
+    private val itemClick: (model: TopHeadlinesUI) -> Unit,
+    private val onItemLongClickListener: (url: String?) -> Unit
+):
     ListAdapter<TopHeadlinesUI, EverythingAdapter.EverythingViewHolder>(
         BaseComparator()
     ) {
@@ -40,9 +44,17 @@ class EverythingAdapter(private val itemClick:(model: TopHeadlinesUI)-> Unit) :
 
         init {
             itemView.setOnClickListener {
-                getItem(absoluteAdapterPosition)?.let{
+                getItem(absoluteAdapterPosition)?.let {
                     itemClick(it)
                 }
+            }
+
+            itemView.setOnLongClickListener {
+                getItem(absoluteAdapterPosition)?.apply {
+                    onItemLongClickListener(urlToImage)
+                    Log.e("image", urlToImage.toString())
+                }
+                false
             }
         }
 

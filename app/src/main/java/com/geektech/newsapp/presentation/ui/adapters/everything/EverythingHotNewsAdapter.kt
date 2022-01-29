@@ -14,7 +14,11 @@ import com.geektech.newsapp.databinding.ItemHotNewsBinding
 import com.geektech.newsapp.base.BaseComparator
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 
-class EverythingHotNewsAdapter(private val itemClick:(model: TopHeadlinesUI)-> Unit) :
+class EverythingHotNewsAdapter (
+    private val itemClick: (model: TopHeadlinesUI) -> Unit,
+    private val onItemLongClickListener: (url: String?) -> Unit
+        ):
+
     ListAdapter<TopHeadlinesUI, EverythingHotNewsAdapter.EverythingHotNewsViewHolder>(
         BaseComparator()
     ) {
@@ -38,11 +42,20 @@ class EverythingHotNewsAdapter(private val itemClick:(model: TopHeadlinesUI)-> U
 
         init {
             itemView.setOnClickListener {
-                getItem(absoluteAdapterPosition)?.let{
+                getItem(absoluteAdapterPosition)?.let {
                     itemClick(it)
                 }
             }
+
+            itemView.setOnLongClickListener {
+                getItem(absoluteAdapterPosition)?.apply {
+                    onItemLongClickListener(urlToImage)
+                    Log.e("image", urlToImage.toString())
+                }
+                false
+            }
         }
+
         fun onBind(it: TopHeadlinesUI) = with(binding) {
             Glide.with(hotNewsIm)
                 .load(it.urlToImage)

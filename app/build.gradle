@@ -11,6 +11,8 @@ plugins {
     //Parcelable
     id("kotlin-parcelize")
 
+    //navigation save args
+    id "androidx.navigation.safeargs.kotlin"
 
 
 

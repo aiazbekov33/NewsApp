@@ -4,17 +4,22 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
+import androidx.viewpager.widget.PagerAdapter
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.geektech.newsapp.R
 import com.geektech.newsapp.databinding.ActivityMainBinding
-
+import com.geektech.newsapp.presentation.ui.adapter.page.PageAdapter
+import com.geektech.newsapp.presentation.ui.fragments.everything.NewsFragment
+import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,9 +27,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupNavigation()
+        setupScrollable()
         setupListener()
     }
-
 
     private fun setupNavigation() {
         val navHostFragment =
@@ -57,16 +62,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    private fun setupScrollable() = with(binding){
-//        var pageAdapter = TabAdapter(supportFragmentManager,lifecycle)
-//        pageAdapter.addFragment(NewsFragment(), "All news")
-//        pageAdapter.addFragment(NewsFragment(), "Business")
-//        pageAdapter.addFragment(NewsFragment(), "Magazine")
-//        pageAdapter.addFragment(NewsFragment(), "World")
-//
-//        viewPager.adapter = pageAdapter
-//        tabLayout.setupWithViewPager(viewPager)
-//    }
     private fun setupActionBarWithNavController(
         activity: MainActivity,
         navController: NavController,

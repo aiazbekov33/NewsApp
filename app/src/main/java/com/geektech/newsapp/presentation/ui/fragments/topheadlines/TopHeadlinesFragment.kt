@@ -1,6 +1,7 @@
 package com.geektech.newsapp.presentation.ui.fragments.topheadlines
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,7 +21,15 @@ class TopHeadlinesFragment :
 
     override val binding by viewBinding(FragmentTopHeadlinesBinding::bind)
     override val viewModel: TopHeadlinesViewModel by viewModels()
-    private val topHeadlinesAdapter = TopHeadlinesAdapter(this::itemClick)
+    private val topHeadlinesAdapter: TopHeadlinesAdapter = TopHeadlinesAdapter(this::itemClick, this::itemLongClick)
+
+    private fun itemLongClick(image: String?) {
+        if (image != null) {
+            Log.e("tag", image)
+            findNavController().navigate(
+                TopHeadlinesFragmentDirections.actionNavigationTopHeadlinesToDialogFragment(image))
+        }
+    }
 
     private fun itemClick(model: TopHeadlinesUI) {
         findNavController().navigate(TopHeadlinesFragmentDirections.actionNavigationTopHeadlinesToDetail(model))
