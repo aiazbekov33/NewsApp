@@ -42,6 +42,7 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
     open fun initialize() {
     }
 
+
     open fun setupListeners() {
     }
 

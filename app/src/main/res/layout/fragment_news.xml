@@ -7,12 +7,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.ui.fragments.everything.NewsFragment">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_hot_news"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_hot_news" />
@@ -36,9 +39,10 @@
         app:layout_constraintTop_toBottomOf="@id/recycler_hot_news"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recycler_hot_news"
         tools:listitem="@layout/item_news"
         />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

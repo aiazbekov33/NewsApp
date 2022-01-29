@@ -11,14 +11,11 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
 import com.geektech.newsapp.base.BaseFragment
 import com.geektech.newsapp.databinding.FragmentNewsBinding
-import com.geektech.newsapp.presentation.base.BaseFragment
-import com.geektech.newsapp.presentation.ui.adapter.TopHeadlinesAdapter
 import com.geektech.newsapp.extensions.scrollListenNextPage
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import com.geektech.newsapp.presentation.state.UIState
 import com.geektech.newsapp.presentation.ui.adapters.everything.EverythingAdapter
 import com.geektech.newsapp.presentation.ui.adapters.everything.EverythingHotNewsAdapter
-import com.geektech.newsapp.presentation.ui.fragments.topheadlines.TopHeadlinesFragment_GeneratedInjector
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,10 +31,11 @@ class NewsFragment :
     override fun initialize() = with(binding) {
         recyclerNews.layoutManager = LinearLayoutManager(context)
         recyclerNews.adapter = everythingAdapter
-
         recyclerHotNews.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         recyclerHotNews.adapter = everythingHotNewsAdapter
+
+
     }
 
     override fun setupListeners() {
@@ -53,7 +51,6 @@ class NewsFragment :
                 }else{
                     if (recyclerHotNews.visibility != View.VISIBLE) {
                         recyclerHotNews.visibility = View.VISIBLE;
-
                     }
                 }
 
