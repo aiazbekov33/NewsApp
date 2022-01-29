@@ -24,7 +24,7 @@ class SettingFragment() :
         switchCompat.setOnClickListener {
             if (switchCompat.isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            }else{
+            } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
         }

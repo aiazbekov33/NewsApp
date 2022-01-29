@@ -17,10 +17,10 @@ import com.geektech.newsapp.base.BaseComparator
 import com.geektech.newsapp.databinding.ItemNewsBinding
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 
-class EverythingAdapter (
+class EverythingAdapter(
     private val itemClick: (model: TopHeadlinesUI) -> Unit,
     private val onItemLongClickListener: (url: String?) -> Unit
-):
+) :
     ListAdapter<TopHeadlinesUI, EverythingAdapter.EverythingViewHolder>(
         BaseComparator()
     ) {

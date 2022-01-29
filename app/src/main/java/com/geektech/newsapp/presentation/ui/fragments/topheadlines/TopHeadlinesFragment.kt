@@ -21,13 +21,15 @@ class TopHeadlinesFragment :
 
     override val binding by viewBinding(FragmentTopHeadlinesBinding::bind)
     override val viewModel: TopHeadlinesViewModel by viewModels()
-    private val topHeadlinesAdapter: TopHeadlinesAdapter = TopHeadlinesAdapter(this::itemClick, this::itemLongClick)
+    private val topHeadlinesAdapter: TopHeadlinesAdapter =
+        TopHeadlinesAdapter(this::itemClick, this::itemLongClick)
 
     private fun itemLongClick(image: String?) {
         if (image != null) {
             Log.e("tag", image)
             findNavController().navigate(
-                TopHeadlinesFragmentDirections.actionNavigationTopHeadlinesToDialogFragment(image))
+                TopHeadlinesFragmentDirections.actionNavigationTopHeadlinesToDialogFragment(image)
+            )
         }
     }
 

@@ -8,12 +8,6 @@ import com.geektech.newsapp.base.BaseFragment
 import com.geektech.newsapp.databinding.FragmentDetailBinding
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import com.geektech.newsapp.presentation.ui.fragments.topheadlines.TopHeadlinesViewModel
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class Detail :
     BaseFragment<FragmentDetailBinding, TopHeadlinesViewModel>(R.layout.fragment_detail) {
 

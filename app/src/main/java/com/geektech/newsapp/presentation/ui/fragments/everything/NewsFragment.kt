@@ -16,7 +16,6 @@ import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import com.geektech.newsapp.presentation.state.UIState
 import com.geektech.newsapp.presentation.ui.adapters.everything.EverythingAdapter
 import com.geektech.newsapp.presentation.ui.adapters.everything.EverythingHotNewsAdapter
-import com.geektech.newsapp.presentation.ui.fragments.topheadlines.TopHeadlinesFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,7 +25,8 @@ class NewsFragment :
     override val binding by viewBinding(FragmentNewsBinding::bind)
     override val viewModel: NewEverythingViewModel by viewModels()
     private val everythingAdapter = EverythingAdapter(this::itemClick, this::itemLongClick)
-    private val everythingHotNewsAdapter = EverythingHotNewsAdapter(this::itemClick, this::itemLongClick)
+    private val everythingHotNewsAdapter =
+        EverythingHotNewsAdapter(this::itemClick, this::itemLongClick)
 
     override fun initialize() = with(binding) {
         recyclerNews.layoutManager = LinearLayoutManager(context)
@@ -41,7 +41,8 @@ class NewsFragment :
         if (image != null) {
             Log.e("tag", image)
             findNavController().navigate(
-                NewsFragmentDirections.actionNavigationNewToDialogFragment(image))
+                NewsFragmentDirections.actionNavigationNewToDialogFragment(image)
+            )
         }
     }
 

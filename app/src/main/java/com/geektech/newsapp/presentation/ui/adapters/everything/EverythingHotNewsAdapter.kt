@@ -11,14 +11,14 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestListener
-import com.geektech.newsapp.databinding.ItemHotNewsBinding
 import com.geektech.newsapp.base.BaseComparator
+import com.geektech.newsapp.databinding.ItemHotNewsBinding
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 
-class EverythingHotNewsAdapter (
+class EverythingHotNewsAdapter(
     private val itemClick: (model: TopHeadlinesUI) -> Unit,
     private val onItemLongClickListener: (url: String?) -> Unit
-        ):
+) :
 
     ListAdapter<TopHeadlinesUI, EverythingHotNewsAdapter.EverythingHotNewsViewHolder>(
         BaseComparator()

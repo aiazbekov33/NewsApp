@@ -14,7 +14,6 @@ import com.bumptech.glide.request.RequestListener
 import com.geektech.newsapp.base.BaseComparator
 import com.geektech.newsapp.databinding.ItemNewsBinding
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
-import kotlin.reflect.KFunction1
 
 class TopHeadlinesAdapter(
     private val itemClick: (model: TopHeadlinesUI) -> Unit,
