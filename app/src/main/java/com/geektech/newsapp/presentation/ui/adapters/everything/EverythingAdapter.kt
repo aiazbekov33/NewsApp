@@ -1,6 +1,7 @@
 package com.geektech.newsapp.presentation.ui.adapters.everything
 
 import android.graphics.drawable.Drawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,10 @@ import com.geektech.newsapp.base.BaseComparator
 import com.geektech.newsapp.databinding.ItemNewsBinding
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 
-class EverythingAdapter :
+class EverythingAdapter (
+    private val itemClick: (model: TopHeadlinesUI) -> Unit,
+    private val onItemLongClickListener: (url: String?) -> Unit
+):
     ListAdapter<TopHeadlinesUI, EverythingAdapter.EverythingViewHolder>(
         BaseComparator()
     ) {
@@ -34,9 +38,25 @@ class EverythingAdapter :
         getItem(position)?.let { holder.onBind(it) }
     }
 
-    class EverythingViewHolder(
+    inner class EverythingViewHolder(
         private val binding: ItemNewsBinding
     ) : RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener {
+                getItem(absoluteAdapterPosition)?.let {
+                    itemClick(it)
+                }
+            }
+
+            itemView.setOnLongClickListener {
+                getItem(absoluteAdapterPosition)?.apply {
+                    onItemLongClickListener(urlToImage)
+                    Log.e("image", urlToImage.toString())
+                }
+                false
+            }
+        }
 
         fun onBind(it: TopHeadlinesUI) = with(binding) {
             Glide.with(newsIm)

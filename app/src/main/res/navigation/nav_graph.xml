@@ -9,7 +9,11 @@
         android:id="@+id/navigation_new"
         android:name="com.geektech.newsapp.presentation.ui.fragments.everything.NewsFragment"
         android:label="news"
-        tools:layout="@layout/fragment_news" />
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_navigation_new_to_dialogFragment"
+            app:destination="@id/dialogFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_setting"
         android:name="com.geektech.newsapp.presentation.ui.fragments.settings.SettingFragment"
@@ -28,17 +32,32 @@
         <action
             android:id="@+id/action_navigation_top_headlines_to_detail"
             app:destination="@id/detail" />
+        <action
+            android:id="@+id/action_navigation_top_headlines_to_dialogFragment"
+            app:destination="@id/dialogFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/detail"
         android:name="com.geektech.newsapp.presentation.ui.fragments.topheadlines.detail.Detail"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail"></fragment>
+        tools:layout="@layout/fragment_detail">
+
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.geektech.newsapp.presentation.ui.fragments.search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
+    <dialog
+        android:id="@+id/dialogFragment"
+        android:name="com.geektech.newsapp.presentation.ui.fragments.dialog.DialogFragment"
+        android:label="fragment_dialog"
+        tools:layout="@layout/fragment_dialog" >
+             <argument
+            android:name="image"
+            app:argType="string"
+            android:defaultValue="null" />
+    </dialog>
 
 </navigation>
