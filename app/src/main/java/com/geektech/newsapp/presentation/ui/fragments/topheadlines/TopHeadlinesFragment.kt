@@ -32,9 +32,7 @@ class TopHeadlinesFragment :
     }
 
     private fun itemClick(model: TopHeadlinesUI) {
-        val bundle = Bundle()
-        bundle.putSerializable("model", model)
-        findNavController().navigate(R.id.detail, bundle)
+        findNavController().navigate(TopHeadlinesFragmentDirections.actionNavigationTopHeadlinesToDetail(model))
     }
 
     override fun initialize() = with(binding) {

@@ -21,8 +21,7 @@ class Detail :
     override val viewModel: TopHeadlinesViewModel by viewModels()
 
     override fun initialize() {
-        if (arguments != null) {
-            val model: TopHeadlinesUI = arguments?.getSerializable("model") as TopHeadlinesUI
+            val model = DetailArgs.fromBundle(requireArguments()).model
             binding.image.load(model.urlToImage)
             binding.title.text = model.title
             binding.author.text = model.author
@@ -30,5 +29,5 @@ class Detail :
             binding.description.text = model.description
         }
     }
-}
+
 

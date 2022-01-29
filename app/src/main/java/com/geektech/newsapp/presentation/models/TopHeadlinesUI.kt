@@ -1,10 +1,12 @@
 package com.geektech.newsapp.presentation.models
 
 
+import android.os.Parcelable
 import com.geektech.domain.models.TopHeadlinesModel
 import com.geektech.newsapp.base.IBaseDiffModel
+import kotlinx.android.parcel.Parcelize
 import java.io.Serializable
-
+@Parcelize
 data class TopHeadlinesUI(
     val source: SourceUI,
     val author: String?,
@@ -14,7 +16,7 @@ data class TopHeadlinesUI(
     val urlToImage: String?,
     val publishedAt: String?,
     val content: String?
-) : IBaseDiffModel,Serializable
+) : IBaseDiffModel,Parcelable
 
 fun TopHeadlinesModel.toUI() = TopHeadlinesUI(
     source.toUi(),

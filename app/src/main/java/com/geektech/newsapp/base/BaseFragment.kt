@@ -27,17 +27,21 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
         initialize()
         setupListeners()
         setupRequests()
+        checkRecycler()
         setupObserves()
         setupDarkNight()
         setupLanguage()
         mySearchView()
     }
 
+    open fun checkRecycler(){}
+
     open fun mySearchView() {
     }
 
     open fun initialize() {
     }
+
 
     open fun setupListeners() {
     }
