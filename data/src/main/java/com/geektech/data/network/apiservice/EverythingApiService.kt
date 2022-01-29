@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface EverythingApiService {
 
-    @GET("/v2/everything?apiKey=0ef15f73c03b4ca0a19a25cbdf3c43d2")
+    @GET("/v2/everything?apiKey=8d897801c99d40dda2e5bdd665453eeb")
     suspend fun fetchEverything(
         @Query("q") query: String?,
         @Query("qinTitle") qinTitle: String?,
@@ -19,7 +19,7 @@ interface EverythingApiService {
         @Query("page") page: Int,
     ): NewsResponseDto<TopHeadlinesDto>
 
-    @GET("/v2/everything?apiKey=0ef15f73c03b4ca0a19a25cbdf3c43d2")
+    @GET("/v2/everything?apiKey=8d897801c99d40dda2e5bdd665453eeb")
     suspend fun fetchEverything2(
         @Query("q") query: String?,
         @Query("qinTitle") qinTitle: String?,

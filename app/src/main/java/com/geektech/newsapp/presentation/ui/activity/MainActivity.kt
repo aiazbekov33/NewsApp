@@ -27,15 +27,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupNavigation()
-        setupScrollable()
         setupListener()
     }
 
     private fun setupNavigation() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        val navController = navHostFragment.navController
-        NavigationUI.setupWithNavController(binding.bottomNav, navController)
         navController = navHostFragment.navController
         val appBarConfiguration = AppBarConfiguration.Builder(
             R.id.navigation_top_headlines,
@@ -64,16 +61,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupScrollable() = with(binding){
-        var pageAdapter = PageAdapter(supportFragmentManager)
-        pageAdapter.addFragment(NewsFragment(), "All news")
-        pageAdapter.addFragment(NewsFragment(), "Business")
-        pageAdapter.addFragment(NewsFragment(), "Magazine")
-        pageAdapter.addFragment(NewsFragment(), "World")
-
-        viewPager.adapter = pageAdapter
-        tabLayout.setupWithViewPager(viewPager)
-    }
     private fun setupActionBarWithNavController(
         activity: MainActivity,
         navController: NavController,
