@@ -18,8 +18,7 @@ import com.geektech.newsapp.databinding.ItemNewsBinding
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 
 class EverythingAdapter (
-    private val itemClick: (model: TopHeadlinesUI) -> Unit,
-    private val onItemLongClickListener: (url: String?) -> Unit
+    private val itemClick: (model: TopHeadlinesUI) -> Unit
 ):
     ListAdapter<TopHeadlinesUI, EverythingAdapter.EverythingViewHolder>(
         BaseComparator()
@@ -49,13 +48,6 @@ class EverythingAdapter (
                 }
             }
 
-            itemView.setOnLongClickListener {
-                getItem(absoluteAdapterPosition)?.apply {
-                    onItemLongClickListener(urlToImage)
-                    Log.e("image", urlToImage.toString())
-                }
-                false
-            }
         }
 
         fun onBind(it: TopHeadlinesUI) = with(binding) {

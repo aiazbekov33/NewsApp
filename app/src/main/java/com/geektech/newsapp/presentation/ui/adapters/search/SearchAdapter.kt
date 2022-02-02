@@ -50,8 +50,9 @@ class SearchAdapter(private val itemClick: (model: TopHeadlinesUI) -> Unit) :
         }
 
         fun onBind(it: TopHeadlinesUI) = with(binding) {
-            txt.text = it.title
-            image.load(it.urlToImage)
+            textTitle.text = it.title
+            textDescription.text = it.description
+            newsIm.load(it.urlToImage)
         }
     }
 }

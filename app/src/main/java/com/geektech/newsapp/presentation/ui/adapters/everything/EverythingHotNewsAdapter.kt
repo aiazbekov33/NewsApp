@@ -15,8 +15,7 @@ import com.geektech.newsapp.base.BaseComparator
 import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 
 class EverythingHotNewsAdapter (
-    private val itemClick: (model: TopHeadlinesUI) -> Unit,
-    private val onItemLongClickListener: (url: String?) -> Unit
+    private val itemClick: (model: TopHeadlinesUI) -> Unit
         ):
 
     ListAdapter<TopHeadlinesUI, EverythingHotNewsAdapter.EverythingHotNewsViewHolder>(
@@ -45,14 +44,6 @@ class EverythingHotNewsAdapter (
                 getItem(absoluteAdapterPosition)?.let {
                     itemClick(it)
                 }
-            }
-
-            itemView.setOnLongClickListener {
-                getItem(absoluteAdapterPosition)?.apply {
-                    onItemLongClickListener(urlToImage)
-                    Log.e("image", urlToImage.toString())
-                }
-                false
             }
         }
 
