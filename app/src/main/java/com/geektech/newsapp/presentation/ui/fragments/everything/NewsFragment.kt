@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
 import com.geektech.newsapp.base.BaseFragment
@@ -24,6 +25,7 @@ class NewsFragment :
 
     override val binding by viewBinding(FragmentNewsBinding::bind)
     override val viewModel: NewEverythingViewModel by viewModels()
+
     private val everythingAdapter = EverythingAdapter(this::itemClick, this::itemLongClick)
     private val everythingHotNewsAdapter =
         EverythingHotNewsAdapter(this::itemClick, this::itemLongClick)
@@ -47,22 +49,20 @@ class NewsFragment :
     }
 
     private fun itemClick(model: TopHeadlinesUI) {
-        val bundle = Bundle()
-        bundle.putSerializable("model", model)
-        findNavController().navigate(R.id.detail, bundle)
+        findNavController().navigate(NewsFragmentDirections.actionNavigationNewToDetail(model))
     }
 
     override fun setupListeners() {
         setupOnScrollListener()
     }
 
-    override fun checkRecycler()= with(binding) {
-        recyclerNews.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+    override fun checkRecycler() = with(binding) {
+        recyclerNews.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (recyclerView.canScrollVertically(-1)) {
                     recyclerHotNews.visibility = View.GONE;
-                }else{
+                } else {
                     if (recyclerHotNews.visibility != View.VISIBLE) {
                         recyclerHotNews.visibility = View.VISIBLE;
                     }
@@ -100,9 +100,6 @@ class NewsFragment :
 
                     }
                     is UIState.Loading -> {
-                }
-                is UIState.Loading -> {
-
                     }
                     is UIState.Success -> {
                         val list = ArrayList<TopHeadlinesUI>(everythingAdapter.currentList)

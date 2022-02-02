@@ -1,6 +1,5 @@
 package com.geektech.newsapp.presentation.ui.fragments.topheadlines
 
-import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -34,7 +33,11 @@ class TopHeadlinesFragment :
     }
 
     private fun itemClick(model: TopHeadlinesUI) {
-        findNavController().navigate(TopHeadlinesFragmentDirections.actionNavigationTopHeadlinesToDetail(model))
+        findNavController().navigate(
+            TopHeadlinesFragmentDirections.actionNavigationTopHeadlinesToDetail(
+                model
+            )
+        )
     }
 
     override fun initialize() = with(binding) {

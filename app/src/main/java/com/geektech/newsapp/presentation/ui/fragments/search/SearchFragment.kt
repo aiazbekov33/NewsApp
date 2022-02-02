@@ -35,7 +35,7 @@ class SearchFragment :
     }
 
     private fun itemClick(model: TopHeadlinesUI) {
-       findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToDetailEverything2(model))
+       findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToDetail(model))
     }
 
     override fun setupRequests() {

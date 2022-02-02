@@ -4,15 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
-import androidx.viewpager.widget.PagerAdapter
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.geektech.newsapp.R
 import com.geektech.newsapp.databinding.ActivityMainBinding
-import com.geektech.newsapp.presentation.ui.adapter.page.PageAdapter
-import com.geektech.newsapp.presentation.ui.fragments.everything.NewsFragment
-import com.google.android.material.tabs.TabLayout
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupNavigation()
-        setupScrollable()
+//        setupScrollable()
         setupListener()
     }
 

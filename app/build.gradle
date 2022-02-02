@@ -6,8 +6,6 @@ plugins {
     id 'kotlin-kapt'
     // Hilt
     id 'dagger.hilt.android.plugin'
-    //Safeargs
-    id("androidx.navigation.safeargs")
     //Parcelable
     id("kotlin-parcelize")
 

@@ -9,9 +9,9 @@ class LocalHelper {
 
     fun setLocale(context: Context, language: String): Context {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            updateResource(context, language)
-        } else {
             updateResourceLegacy(context, language)
+        } else {
+            updateResource(context, language)
         }
     }
 
