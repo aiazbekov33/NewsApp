@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
 import com.geektech.newsapp.base.BaseFragment
@@ -25,8 +26,8 @@ class NewsFragment :
 
     override val binding by viewBinding(FragmentNewsBinding::bind)
     override val viewModel: NewEverythingViewModel by viewModels()
-    private val everythingAdapter = EverythingAdapter(this::itemClick, this::itemLongClick)
-    private val everythingHotNewsAdapter = EverythingHotNewsAdapter(this::itemClick, this::itemLongClick)
+    private val everythingAdapter = EverythingAdapter(this::itemClick)
+    private val everythingHotNewsAdapter = EverythingHotNewsAdapter(this::itemClick)
 
     override fun initialize() = with(binding) {
         recyclerNews.layoutManager = LinearLayoutManager(context)
@@ -37,18 +38,10 @@ class NewsFragment :
         recyclerHotNews.adapter = everythingHotNewsAdapter
     }
 
-    private fun itemLongClick(image: String?) {
-        if (image != null) {
-            Log.e("tag", image)
-            findNavController().navigate(
-                NewsFragmentDirections.actionNavigationNewToDialogFragment(image))
-        }
-    }
+
 
     private fun itemClick(model: TopHeadlinesUI) {
-        val bundle = Bundle()
-        bundle.putSerializable("model", model)
-        findNavController().navigate(R.id.detail, bundle)
+        findNavController().navigate(NewsFragmentDirections.actionNavigationNewToDetailEverything(model))
     }
 
     override fun setupListeners() {
@@ -100,9 +93,6 @@ class NewsFragment :
                     }
                     is UIState.Loading -> {
                 }
-                is UIState.Loading -> {
-
-                    }
                     is UIState.Success -> {
                         val list = ArrayList<TopHeadlinesUI>(everythingAdapter.currentList)
                         it.data.let { data -> list.addAll(data) }

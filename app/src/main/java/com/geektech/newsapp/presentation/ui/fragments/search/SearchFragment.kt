@@ -3,8 +3,12 @@ package com.geektech.newsapp.presentation.ui.fragments.search
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
+import androidx.navigation.ActivityNavigator
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.newsapp.R
@@ -24,9 +28,9 @@ class SearchFragment :
     override val viewModel: TopHeadlinesViewModel by viewModels()
     private lateinit var adapter: SearchAdapter
     private var currentText = ""
-    private val handler = Handler(Looper.getMainLooper())
-    private val searchRunnable = Runnable {
-        viewModel.searchNews(currentText)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
     }
 
     override fun initialize() {
@@ -34,11 +38,16 @@ class SearchFragment :
         binding.recycler.adapter = adapter
     }
 
+
     private fun itemClick(model: TopHeadlinesUI) {
-       findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToDetailEverything2(model))
+       findNavController().navigate(SearchFragmentDirections.actionSearchFragmentToDetail(model))
     }
 
     override fun setupRequests() {
+        val handler = Handler(Looper.getMainLooper())
+        val searchRunnable = Runnable {
+            viewModel.searchNews(currentText)
+        }
         binding.edit.doAfterTextChanged {
             currentText = it?.toString() ?: ""
             handler.removeCallbacks(searchRunnable)
@@ -57,4 +66,5 @@ class SearchFragment :
             }
         }
     }
+
 }

@@ -17,8 +17,7 @@ import com.geektech.newsapp.presentation.models.TopHeadlinesUI
 import kotlin.reflect.KFunction1
 
 class TopHeadlinesAdapter(
-    private val itemClick: (model: TopHeadlinesUI) -> Unit,
-    private val onItemLongClickListener: (url: String?) -> Unit
+    private val itemClick: (model: TopHeadlinesUI) -> Unit
 ) :
     ListAdapter<TopHeadlinesUI, TopHeadlinesAdapter.TopHeadlinesViewHolder>(
         BaseComparator()
@@ -48,13 +47,6 @@ class TopHeadlinesAdapter(
                 }
             }
 
-            itemView.setOnLongClickListener {
-                getItem(absoluteAdapterPosition)?.apply {
-                    onItemLongClickListener(urlToImage)
-                    Log.e("image", urlToImage.toString())
-                }
-                false
-            }
         }
 
         fun onBind(it: TopHeadlinesUI) = with(binding) {
